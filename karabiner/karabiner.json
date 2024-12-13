@@ -1,6 +1,9 @@
 {
     "profiles": [
-        { "name": "Default profile" },
+        {
+            "name": "Default profile",
+            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+        },
         {
             "complex_modifications": {
                 "parameters": {
@@ -1396,14 +1399,6 @@
                             "to": [{ "key_code": "left_option" }]
                         }
                     ]
-                },
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "product_id": 49738,
-                        "vendor_id": 1133
-                    },
-                    "ignore": true
                 },
                 {
                     "identifiers": {
