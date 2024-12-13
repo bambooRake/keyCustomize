@@ -1,0 +1,7 @@
+*
+!karabiner/
+!karabiner/**
+karabiner/automatic_backups
+!karabiner.edn
+**/.DS_Store
+!.gitignore
