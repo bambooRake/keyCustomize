@@ -35,6 +35,17 @@
                 [:right_command :right_control [:rdp-cond]]
                 [:right_control :right_command [:rdp-cond]]
 
+                ;; [:##keypad_1 :]
+                [:##keypad_2 :up_arrow]
+                ;; [:##keypad_3 :]
+                [:##keypad_4 :left_arrow]
+                [:##keypad_5 :down_arrow]
+                [:##keypad_6 :right_arrow]
+                ;; [:##keypad_7 :]
+                ;; [:##keypad_8 :]
+                ;; [:##keypad_9 :]
+
+
                 ;;  [:right_control :right_command [:rdp-cond]] ;; rdp_control　→　win上winキー
                  [:!Tq :!Of4 [:rdp-cond]]]}
         ;; {:des "Swap Modify Key on hhkb keyboard"
