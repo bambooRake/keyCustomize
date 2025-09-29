@@ -373,7 +373,7 @@
                                     }
                                 ],
                                 "from": { "key_code": "s" },
-                                "to_if_held_down": [{ "key_code": "left_command" }],
+                                "to_if_held_down": [{ "key_code": "left_control" }],
                                 "to_if_alone": [{ "key_code": "s" }],
                                 "type": "basic"
                             },
@@ -439,7 +439,8 @@
                                     }
                                 ],
                                 "from": { "key_code": "q" },
-                                "to": [{ "key_code": "home" }],
+                                "to_if_held_down": [{ "key_code": "left_option" }],
+                                "to_if_alone": [{ "key_code": "grave_accent_and_tilde" }],
                                 "type": "basic"
                             },
                             {
@@ -451,54 +452,6 @@
                                     }
                                 ],
                                 "from": { "key_code": "w" },
-                                "to": [{ "key_code": "up_arrow" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "layer-1",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": { "key_code": "e" },
-                                "to": [{ "key_code": "end" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "layer-1",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": { "key_code": "t" },
-                                "to": [{ "key_code": "open_bracket" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "layer-1",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": { "key_code": "y" },
-                                "to": [{ "key_code": "close_bracket" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "layer-1",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": { "key_code": "u" },
                                 "to": [{ "key_code": "7" }],
                                 "type": "basic"
                             },
@@ -510,7 +463,7 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "i" },
+                                "from": { "key_code": "e" },
                                 "to": [{ "key_code": "8" }],
                                 "type": "basic"
                             },
@@ -522,7 +475,7 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "o" },
+                                "from": { "key_code": "t" },
                                 "to": [{ "key_code": "9" }],
                                 "type": "basic"
                             },
@@ -534,149 +487,7 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "p" },
-                                "to": [{ "key_code": "0" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "layer-1",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": { "key_code": "a" },
-                                "to": [{ "key_code": "left_arrow" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "layer-1",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": { "key_code": "s" },
-                                "to": [{ "key_code": "down_arrow" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "layer-1",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": { "key_code": "d" },
-                                "to": [{ "key_code": "right_arrow" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "layer-1",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": { "key_code": "f" },
-                                "to": [{ "key_code": "equal_sign" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "layer-1",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": { "key_code": "g" },
-                                "to": [
-                                    {
-                                        "key_code": "open_bracket",
-                                        "modifiers": ["left_shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "layer-1",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": { "key_code": "h" },
-                                "to": [
-                                    {
-                                        "key_code": "close_bracket",
-                                        "modifiers": ["left_shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "layer-1",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": { "key_code": "j" },
-                                "to": [{ "key_code": "4" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "layer-1",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": { "key_code": "k" },
-                                "to": [{ "key_code": "5" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "layer-1",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": { "key_code": "l" },
-                                "to": [{ "key_code": "6" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "layer-1",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": { "key_code": "semicolon" },
-                                "to": [{ "key_code": "hyphen" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "layer-1",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": { "key_code": "n" },
+                                "from": { "key_code": "y" },
                                 "to": [{ "key_code": "quote" }],
                                 "type": "basic"
                             },
@@ -688,7 +499,93 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "m" },
+                                "from": { "key_code": "a" },
+                                "to_if_held_down": [{ "key_code": "right_command" }],
+                                "to_if_alone": [{ "key_code": "hyphen" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "layer-1",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "key_code": "s" },
+                                "to": [{ "key_code": "4" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "layer-1",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "key_code": "d" },
+                                "to": [{ "key_code": "5" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "layer-1",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "key_code": "f" },
+                                "to": [{ "key_code": "6" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "layer-1",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "key_code": "g" },
+                                "to": [{ "key_code": "open_bracket" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "layer-1",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "key_code": "h" },
+                                "to": [{ "key_code": "close_bracket" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "layer-1",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "key_code": "z" },
+                                "to_if_held_down": [{ "key_code": "left_shift" }],
+                                "to_if_alone": [{ "key_code": "equal_sign" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "layer-1",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "key_code": "x" },
                                 "to": [{ "key_code": "1" }],
                                 "type": "basic"
                             },
@@ -700,7 +597,7 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "comma" },
+                                "from": { "key_code": "c" },
                                 "to": [{ "key_code": "2" }],
                                 "type": "basic"
                             },
@@ -712,7 +609,7 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "period" },
+                                "from": { "key_code": "v" },
                                 "to": [{ "key_code": "3" }],
                                 "type": "basic"
                             },
@@ -724,8 +621,8 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "slash" },
-                                "to": [{ "key_code": "grave_accent_and_tilde" }],
+                                "from": { "key_code": "b" },
+                                "to": [{ "key_code": "0" }],
                                 "type": "basic"
                             }
                         ]
@@ -862,7 +759,8 @@
                                     }
                                 ],
                                 "from": { "key_code": "a" },
-                                "to": [{ "key_code": "left_option" }],
+                                "to_if_held_down": [{ "key_code": "right_command" }],
+                                "to_if_alone": [{ "key_code": "hyphen" }],
                                 "type": "basic"
                             },
                             {
@@ -874,7 +772,8 @@
                                     }
                                 ],
                                 "from": { "key_code": "s" },
-                                "to": [{ "key_code": "left_shift" }],
+                                "to_if_held_down": [{ "key_code": "left_control" }],
+                                "to_if_alone": [{ "key_code": "return_or_enter" }],
                                 "type": "basic"
                             },
                             {

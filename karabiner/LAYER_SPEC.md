@@ -10,7 +10,7 @@
 - **Q**: 長押し→Left Alt、短押し→Q
 - **A**: 長押し→Right Command、短押し→A
 - **Z**: 長押し→Left Shift、短押し→Z
-- **S**: 長押し→Left Command、短押し→S
+- **S**: 長押し→Left Control、短押し→S
 
 ### Apple内蔵キーボード専用
 - **Left Control** → Right Command
@@ -24,25 +24,30 @@
 
 | キー | 機能 |
 |------|------|
-| Q | Home |
-| W | ↑ |
-| E | End |
-| T | [ |
-| Y | ] |
+| Q | 長押し→Left Alt、短押し→grave |
+| W | 7 |
+| E | 8 |
+| T | 9 |
+| Y | quote |
 | U | 7 |
 | I | 8 |
 | O | 9 |
 | P | 0 |
-| A | ← |
-| S | ↓ |
-| D | → |
-| F | = |
-| G | { |
-| H | } |
+| A | 長押し→Right Command、短押し→minus |
+| S | 4 |
+| D | 5 |
+| F | 6 |
+| G | [ |
+| H | ] |
 | J | 4 |
 | K | 5 |
 | L | 6 |
 | ; | - |
+| Z | 長押し→Left Shift、短押し→equal |
+| X | 1 |
+| C | 2 |
+| V | 3 |
+| B | 0 |
 | N | ' |
 | M | 1 |
 | , | 2 |
@@ -64,8 +69,8 @@
 | I | Page Up |
 | O | End |
 | P | Insert |
-| A | Left Option |
-| S | Left Shift |
+| A | 長押し→Right Command、短押し→minus |
+| S | 長押し→Left Control、短押し→Enter |
 | D | 垂直スクロール上 |
 | F | 左クリック(Button1) |
 | G | 右クリック(Button3) |
