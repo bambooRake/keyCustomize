@@ -27,7 +27,8 @@
 | Q | 長押し→Left Alt、短押し→grave |
 | W | 7 |
 | E | 8 |
-| T | 9 |
+| R | 9 |
+| T | quote |
 | Y | quote |
 | U | 7 |
 | I | 8 |
