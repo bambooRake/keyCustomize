@@ -6,14 +6,18 @@
 
 ## Layer-0 (Default)
 
+### 長押し機能（レイヤー非アクティブ時のみ）
+- **Q**: 長押し→Left Alt、短押し→Q
+- **A**: 長押し→Right Command、短押し→A
+- **Z**: 長押し→Left Shift、短押し→Z
+- **S**: 長押し→Left Command、短押し→S
+
 ### Apple内蔵キーボード専用
 - **Left Control** → Right Command
 - **Left Command** → Left Option
 - **Left Option** → Left Control
 
 ### 全キーボード共通
-- **Caps Lock** → Left Control
-- **Escape** → `（バッククォート/チルダ）
 
 ## Layer-1 (Numbers & Symbols)
 **トリガー**: Space長押し
