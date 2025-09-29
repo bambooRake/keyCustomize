@@ -20,7 +20,6 @@
 
 ## Layer-0 (Default)
 
-### 長押し修飾キー（Vial準拠・レイヤー非アクティブ時のみ）
 | キー | 機能 | 説明 |
 |------|------|------|
 | **上段** |||
@@ -142,7 +141,7 @@
 | . | F19 | ファンクションキー |
 | / | Caps Lock | 大文字ロック |
 
-## Layer-3 (Application Control)
+## Layer-3 (Cursor Control)
 **トリガー**: 無変換 (japanese_kana) 長押し
 
 | キー | 機能 | 説明 |
@@ -189,16 +188,47 @@ Parallelsアプリ使用時のみ：
 - Right Command ↔ Right Control入れ替え
 - Right Control + Q → Alt + F4
 
-### G600マウス設定
-G600マウス（vendor_id: 1133, product_id: 49738）使用時：
-- Keypad 1 → Home
-- Keypad 2 → ↑
-- Keypad 3 → End
-- Keypad 4 → ←
-- Keypad 5 → ↓
-- Keypad 6 → →
-- Keypad 9 → Option + ←（単語移動）
-- Keypad 0 → Cmd + Shift + S
+### G600マウス設定（レイヤー毎）
+G600マウス（vendor_id: 1133, product_id: 49738）のテンキーボタンをVialでレイヤー毎にリマップ：
+
+#### Layer-0（ベースレイヤー）
+| キー | 機能 | 説明 |
+|------|------|------|
+| Keypad 1 | Home | 行頭移動 |
+| Keypad 2 | ↑ | 上矢印 |
+| Keypad 3 | End | 行末移動 |
+| Keypad 4 | ← | 左矢印 |
+| Keypad 5 | ↓ | 下矢印 |
+| Keypad 6 | → | 右矢印 |
+| Keypad 9 | Option + ← | 単語移動 |
+| Keypad 0 | Cmd + Shift + S | 特別保存 |
+
+#### Layer-1（数字・記号レイヤー）
+| キー | 機能 | 説明 |
+|------|------|------|
+| Keypad 1 | 左クリック | マウス左クリック |
+| Keypad 2 | 中クリック | マウス中クリック |
+| Keypad 3 | △ | 透過 |
+| Keypad 4 | △ | 透過 |
+| その他 | △ | 透過 |
+
+#### Layer-2（マウス・ナビゲーションレイヤー）
+| キー | 機能 | 説明 |
+|------|------|------|
+| Keypad 1 | ← | 左矢印 |
+| Keypad 2 | → | 右矢印 |
+| Keypad 3 | ↑ | 上矢印 |
+| Keypad 4 | ↓ | 下矢印 |
+| その他 | △ | 透過 |
+
+#### Layer-3（カーソル制御レイヤー）
+| キー | 機能 | 説明 |
+|------|------|------|
+| Keypad 1 | Cmd + → | デスクトップ右移動 |
+| Keypad 2 | Cmd + ← | デスクトップ左移動 |
+| Keypad 3 | Cmd + ↑ | Mission Control |
+| Keypad 4 | Cmd + ↓ | アプリケーション Exposé |
+| その他 | △ | 透過 |
 
 ## 使用上の注意
 
