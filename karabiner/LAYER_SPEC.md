@@ -34,11 +34,11 @@
 | O | △ | 未割り当て |
 | P | △ | 未割り当て |
 | **中段（ホーム行）** |||
-| A | 長押し→Right Control、短押し→A | 長押し修飾キー |
-| S | 長押し→Left Command、短押し→S | 長押し修飾キー |
+| A | 長押し→Right Command、短押し→A | 長押し修飾キー |
+| S | 長押し→Left Control、短押し→S | 長押し修飾キー |
 | D | △ | 未割り当て |
-| F | 長押し→Right Control、短押し→F | 長押し修飾キー |
-| G | 長押し→Left Command、短押し→G | 長押し修飾キー |
+| F | 長押し→Right Command、短押し→F | 長押し修飾キー |
+| G | 長押し→Left Control、短押し→G | 長押し修飾キー |
 | H | △ | 未割り当て |
 | J | △ | 未割り当て |
 | K | △ | 未割り当て |
@@ -80,11 +80,11 @@
 | O | F4 | ファンクションキー |
 | P | F5 | ファンクションキー |
 | **中段（ホーム行）** |||
-| A | 長押し→Right Control、短押し→- | ハイフン・マイナス |
-| S | 長押し→Left Command、短押し→4 | 数字4 |
+| A | 長押し→Right Command、短押し→- | ハイフン・マイナス |
+| S | 長押し→Left Control、短押し→4 | 数字4 |
 | D | 5 | 数字5 |
-| F | 長押し→Right Control、短押し→6 | 数字6 |
-| G | 長押し→Left Command、短押し→. | ピリオド |
+| F | 長押し→Right Command、短押し→6 | 数字6 |
+| G | 長押し→Left Control、短押し→. | ピリオド |
 | H | F6 | ファンクションキー |
 | J | F7 | ファンクションキー |
 | K | F8 | ファンクションキー |
@@ -119,8 +119,8 @@
 | O | End | 行末移動 |
 | P | Print Screen | スクリーンショット |
 | **中段（ホーム行）** |||
-| A | 長押し→Right Control、短押し→- | ハイフン |
-| S | 長押し→Left Command、短押し→Enter | 改行・決定 |
+| A | 長押し→Right Command、短押し→- | ハイフン |
+| S | 長押し→Left Control、短押し→Enter | 改行・決定 |
 | D | 垂直スクロール下 | マウス縦スクロール |
 | F | 左クリック(Button1) | マウス左クリック |
 | G | 中クリック(Button3) | マウス中クリック |
