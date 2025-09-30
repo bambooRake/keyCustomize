@@ -5,3 +5,4 @@ karabiner/automatic_backups
 !karabiner.edn
 **/.DS_Store
 !.gitignore
+karabiner/passwords.json
