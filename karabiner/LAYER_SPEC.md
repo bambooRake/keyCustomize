@@ -194,41 +194,78 @@ G600マウス（vendor_id: 1133, product_id: 49738）のテンキーボタンを
 #### Layer-0（ベースレイヤー）
 | キー | 機能 | 説明 |
 |------|------|------|
-| Keypad 1 | Home | 行頭移動 |
-| Keypad 2 | ↑ | 上矢印 |
-| Keypad 3 | End | 行末移動 |
+| Keypad 7 | △ | 未割り当て |
+| Keypad 8 | △ | 未割り当て |
+| Keypad 9 | Option + ← | 単語移動 |
+| Keypad - | △ | 未割り当て |
 | Keypad 4 | ← | 左矢印 |
 | Keypad 5 | ↓ | 下矢印 |
 | Keypad 6 | → | 右矢印 |
-| Keypad 9 | Option + ← | 単語移動 |
+| Keypad + | △ | 未割り当て |
+| Keypad 1 | Home | 行頭移動 |
+| Keypad 2 | ↑ | 上矢印 |
+| Keypad 3 | End | 行末移動 |
+| Keypad = | △ | 未割り当て |
 | Keypad 0 | Cmd + Shift + S | 特別保存 |
+| Keypad . | △ | 未割り当て |
+| Keypad Enter | △ | 未割り当て |
 
 #### Layer-1（数字・記号レイヤー）
 | キー | 機能 | 説明 |
 |------|------|------|
+| Keypad 7 | △ | 透過 |
+| Keypad 8 | △ | 透過 |
+| Keypad 9 | △ | 透過 |
+| Keypad - | △ | 透過 |
+| Keypad 4 | △ | 透過 |
+| Keypad 5 | △ | 透過 |
+| Keypad 6 | △ | 透過 |
+| Keypad + | △ | 透過 |
 | Keypad 1 | 左クリック | マウス左クリック |
 | Keypad 2 | 中クリック | マウス中クリック |
 | Keypad 3 | △ | 透過 |
-| Keypad 4 | △ | 透過 |
-| その他 | △ | 透過 |
+| Keypad = | △ | 透過 |
+| Keypad 0 | △ | 透過 |
+| Keypad . | △ | 透過 |
+| Keypad Enter | △ | 透過 |
 
 #### Layer-2（マウス・ナビゲーションレイヤー）
 | キー | 機能 | 説明 |
 |------|------|------|
-| Keypad 1 | ← | 左矢印 |
-| Keypad 2 | → | 右矢印 |
-| Keypad 3 | ↑ | 上矢印 |
-| Keypad 4 | ↓ | 下矢印 |
-| その他 | △ | 透過 |
+| Keypad 7 | △ | 透過 |
+| Keypad 8 | △ | 透過 |
+| Keypad 9 | △ | 透過 |
+| Keypad - | △ | 透過 |
+| Keypad 4 | ← | 左矢印 |
+| Keypad 5 | ↓ | 下矢印 |
+| Keypad 6 | → | 右矢印 |
+| Keypad + | △ | 透過 |
+| Keypad 1 | △ | 透過 |
+| Keypad 2 | ↑ | 上矢印 |
+| Keypad 3 | △ | 透過 |
+| Keypad = | △ | 透過 |
+| Keypad 0 | △ | 透過 |
+| Keypad . | △ | 透過 |
+| Keypad Enter | △ | 透過 |
 
 #### Layer-3（カーソル制御レイヤー）
 | キー | 機能 | 説明 |
 |------|------|------|
+| Keypad 7 | △ | 透過 |
+| Keypad 8 | △ | 透過 |
+| Keypad 9 | △ | 透過 |
+| Keypad - | △ | 透過 |
+| Keypad 4 | Cmd + ↓ | アプリケーション Exposé |
+| Keypad 5 | △ | 透過 |
+| Keypad 6 | △ | 透過 |
+| Keypad + | △ | 透過 |
 | Keypad 1 | Cmd + → | デスクトップ右移動 |
 | Keypad 2 | Cmd + ← | デスクトップ左移動 |
 | Keypad 3 | Cmd + ↑ | Mission Control |
-| Keypad 4 | Cmd + ↓ | アプリケーション Exposé |
-| その他 | △ | 透過 |
+| Keypad = | △ | 透過 |
+| Keypad 0 | △ | 透過 |
+| Keypad . | △ | 透過 |
+| Keypad Enter | △ | 透過 |
 
 ## 使用上の注意
 
