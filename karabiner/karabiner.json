@@ -244,7 +244,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "a", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "a",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to_if_alone": [{ "key_code": "hyphen" }],
                                 "to_if_held_down": [{ "key_code": "right_control" }],
                                 "type": "basic"
@@ -264,7 +267,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "g", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "g",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to_if_alone": [{ "key_code": "period" }],
                                 "to_if_held_down": [{ "key_code": "left_command" }],
                                 "type": "basic"
@@ -284,7 +290,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "a", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "a",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to_if_alone": [{ "key_code": "hyphen" }],
                                 "to_if_held_down": [{ "key_code": "right_control" }],
                                 "type": "basic"
@@ -304,7 +313,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "s", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to_if_alone": [{ "key_code": "return_or_enter" }],
                                 "to_if_held_down": [{ "key_code": "left_command" }],
                                 "type": "basic"
@@ -326,7 +338,7 @@
                                         "type": "device_if"
                                     }
                                 ],
-                                "from": { "key_code": "keypad_plus" },
+                                "from": { "pointing_button": "button6" },
                                 "to": [
                                     {
                                         "set_variable": {
@@ -357,7 +369,7 @@
                                         "type": "device_if"
                                     }
                                 ],
-                                "from": { "key_code": "keypad_0" },
+                                "from": { "pointing_button": "button18" },
                                 "to": [
                                     {
                                         "key_code": "print_screen",
@@ -388,7 +400,7 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "keypad_7" },
+                                "from": { "pointing_button": "button9" },
                                 "to": [{ "key_code": "home" }],
                                 "type": "basic"
                             },
@@ -409,7 +421,7 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "keypad_9" },
+                                "from": { "pointing_button": "button11" },
                                 "to": [{ "key_code": "left_shift" }],
                                 "type": "basic"
                             },
@@ -430,50 +442,8 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "keypad_4" },
+                                "from": { "pointing_button": "button12" },
                                 "to": [{ "key_code": "end" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "product_id": 49738,
-                                                "vendor_id": 1133
-                                            }
-                                        ],
-                                        "type": "device_if"
-                                    },
-                                    {
-                                        "name": "layer-1",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": { "pointing_button": "button1" },
-                                "to": [{ "key_code": "left_arrow" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "product_id": 49738,
-                                                "vendor_id": 1133
-                                            }
-                                        ],
-                                        "type": "device_if"
-                                    },
-                                    {
-                                        "name": "layer-1",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": { "pointing_button": "button2" },
-                                "to": [{ "key_code": "right_arrow" }],
                                 "type": "basic"
                             },
                             {
@@ -2365,20 +2335,20 @@
                     },
                     "simple_modifications": [
                         {
-                            "from": { "key_code": "left_control" },
-                            "to": [{ "key_code": "right_command" }]
-                        },
-                        {
-                            "from": { "key_code": "left_command" },
-                            "to": [{ "key_code": "left_control" }]
-                        },
-                        {
                             "from": { "key_code": "japanese_pc_nfer" },
                             "to": [{ "key_code": "japanese_eisuu" }]
                         },
                         {
                             "from": { "key_code": "japanese_pc_xfer" },
                             "to": [{ "key_code": "japanese_kana" }]
+                        },
+                        {
+                            "from": { "key_code": "left_command" },
+                            "to": [{ "key_code": "left_control" }]
+                        },
+                        {
+                            "from": { "key_code": "left_control" },
+                            "to": [{ "key_code": "right_command" }]
                         }
                     ]
                 }
