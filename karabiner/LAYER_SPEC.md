@@ -196,19 +196,19 @@ G600マウス（vendor_id: 1133, product_id: 49738）のテンキーボタンを
 |------|------|------|
 | Keypad 7 | △ | 未割り当て |
 | Keypad 8 | △ | 未割り当て |
-| Keypad 9 | Option + ← | 単語移動 |
+| Keypad 9 | △ | 未割り当て |
 | Keypad - | △ | 未割り当て |
-| Keypad 4 | ← | 左矢印 |
-| Keypad 5 | ↓ | 下矢印 |
-| Keypad 6 | → | 右矢印 |
+| Keypad 4 | △ | 未割り当て |
+| Keypad 5 | △ | 未割り当て |
+| Keypad 6 | △ | 未割り当て |
 | Keypad + | △ | 未割り当て |
-| Keypad 1 | Home | 行頭移動 |
-| Keypad 2 | ↑ | 上矢印 |
-| Keypad 3 | End | 行末移動 |
-| Keypad = | △ | 未割り当て |
-| Keypad 0 | Cmd + Shift + S | 特別保存 |
+| Keypad 1 | △ | 未割り当て |
+| Keypad 2 | △ | 未割り当て |
+| Keypad 3 | △ | 未割り当て |
+| Keypad = | Keypad = | テンキーイコール |
+| Keypad 0 | △ | 未割り当て |
 | Keypad . | △ | 未割り当て |
-| Keypad Enter | △ | 未割り当て |
+| Keypad Enter | Keypad Enter | テンキーエンター |
 | 左クリック | △ | 未割り当て |
 | 右クリック | △ | 未割り当て |
 | 中クリック | △ | 未割り当て |
@@ -230,8 +230,8 @@ G600マウス（vendor_id: 1133, product_id: 49738）のテンキーボタンを
 | Keypad 5 | △ | 透過 |
 | Keypad 6 | △ | 透過 |
 | Keypad + | △ | 透過 |
-| Keypad 1 | 左クリック | マウス左クリック |
-| Keypad 2 | 中クリック | マウス中クリック |
+| Keypad 1 | △ | 透過 |
+| Keypad 2 | △ | 透過 |
 | Keypad 3 | △ | 透過 |
 | Keypad = | △ | 透過 |
 | Keypad 0 | △ | 透過 |
@@ -254,12 +254,12 @@ G600マウス（vendor_id: 1133, product_id: 49738）のテンキーボタンを
 | Keypad 8 | △ | 透過 |
 | Keypad 9 | △ | 透過 |
 | Keypad - | △ | 透過 |
-| Keypad 4 | ← | 左矢印 |
-| Keypad 5 | ↓ | 下矢印 |
-| Keypad 6 | → | 右矢印 |
+| Keypad 4 | △ | 透過 |
+| Keypad 5 | △ | 透過 |
+| Keypad 6 | △ | 透過 |
 | Keypad + | △ | 透過 |
 | Keypad 1 | △ | 透過 |
-| Keypad 2 | ↑ | 上矢印 |
+| Keypad 2 | △ | 透過 |
 | Keypad 3 | △ | 透過 |
 | Keypad = | △ | 透過 |
 | Keypad 0 | △ | 透過 |
@@ -282,13 +282,13 @@ G600マウス（vendor_id: 1133, product_id: 49738）のテンキーボタンを
 | Keypad 8 | △ | 透過 |
 | Keypad 9 | △ | 透過 |
 | Keypad - | △ | 透過 |
-| Keypad 4 | Cmd + ↓ | アプリケーション Exposé |
+| Keypad 4 | △ | 透過 |
 | Keypad 5 | △ | 透過 |
 | Keypad 6 | △ | 透過 |
 | Keypad + | △ | 透過 |
-| Keypad 1 | Cmd + → | デスクトップ右移動 |
-| Keypad 2 | Cmd + ← | デスクトップ左移動 |
-| Keypad 3 | Cmd + ↑ | Mission Control |
+| Keypad 1 | △ | 透過 |
+| Keypad 2 | △ | 透過 |
+| Keypad 3 | △ | 透過 |
 | Keypad = | △ | 透過 |
 | Keypad 0 | △ | 透過 |
 | Keypad . | △ | 透過 |
