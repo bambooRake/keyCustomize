@@ -194,28 +194,28 @@ G600マウス（vendor_id: 1133, product_id: 49738）のテンキーボタンを
 #### Layer-0（ベースレイヤー）
 | キー | 機能 | 説明 |
 |------|------|------|
-| Keypad 7 | △ | 未割り当て |
+| Keypad 7 | Home | 行頭移動 |
 | Keypad 8 | △ | 未割り当て |
-| Keypad 9 | △ | 未割り当て |
+| Keypad 9 | Left Shift | 左シフトキー |
 | Keypad - | △ | 未割り当て |
-| Keypad 4 | △ | 未割り当て |
+| Keypad 4 | End | 行末移動 |
 | Keypad 5 | △ | 未割り当て |
 | Keypad 6 | △ | 未割り当て |
-| Keypad + | △ | 未割り当て |
+| Keypad + | MO(1) | Layer-1切り替え |
 | Keypad 1 | △ | 未割り当て |
 | Keypad 2 | △ | 未割り当て |
 | Keypad 3 | △ | 未割り当て |
 | Keypad = | △ | 未割り当て |
-| Keypad 0 | Right Control + Print Screen  | Right Control + Print Screen |
+| Keypad 0 | Right Control + Print Screen | 右Control+スクリーンショット |
 | Keypad . | △ | 未割り当て |
 | Keypad Enter | △ | 未割り当て |
-| 左クリック | △ | 未割り当て |
-| 右クリック | △ | 未割り当て |
+| 左クリック | ← | 左矢印 |
+| 右クリック | → | 右矢印 |
 | 中クリック | △ | 未割り当て |
 | 戻るボタン | △ | 未割り当て |
 | 進むボタン | △ | 未割り当て |
-| 上スクロール | △ | 未割り当て |
-| 下スクロール | △ | 未割り当て |
+| 上スクロール | ↑ | 上矢印 |
+| 下スクロール | ↓ | 下矢印 |
 | 左スクロール | △ | 未割り当て |
 | 右スクロール | △ | 未割り当て |
 
