@@ -56,10 +56,20 @@
 | . | △ | 未割り当て |
 | / | △ | 未割り当て |
 
-### Apple内蔵キーボード専用
+### デバイス別設定
+
+#### Apple内蔵キーボード専用
+- **識別**: is_built_in_keyboard: true
 - **Left Control** → Right Command
 - **Left Command** → Left Option
 - **Left Option** → Left Control
+
+#### HHKB (Happy Hacking Keyboard)
+- **識別**: vendor_id: 1278, product_id: 34
+- **Left Control** → Right Command
+- **Left Command** → Left Control
+- **japanese_pc_nfer（無変換）** → japanese_eisuu
+- **japanese_pc_xfer（変換）** → japanese_kana
 
 ### 全キーボード共通
 
