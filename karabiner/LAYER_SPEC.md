@@ -198,6 +198,13 @@ Parallelsアプリ使用時のみ：
 - Right Command ↔ Right Control入れ替え
 - Right Control + Q → Alt + F4
 
+#### 長押し修飾キーの入れ替え（RDP使用時）
+Parallelsアプリ使用時、長押し修飾キーのCommand/Controlを入れ替え：
+- A長押し → Right Control（通常時：Right Command）
+- S長押し → Left Command（通常時：Left Control）
+- F長押し → Right Control（通常時：Right Command）
+- G長押し → Left Command（通常時：Left Control）
+
 ### G600マウス設定（レイヤー毎）
 G600マウス（vendor_id: 1133, product_id: 49738）のテンキーボタンをVialでレイヤー毎にリマップ：
 
