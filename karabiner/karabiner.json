@@ -121,54 +121,6 @@
                                         "type": "device_if"
                                     }
                                 ],
-                                "from": { "key_code": "keypad_7" },
-                                "to": [{ "key_code": "home" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "product_id": 49738,
-                                                "vendor_id": 1133
-                                            }
-                                        ],
-                                        "type": "device_if"
-                                    }
-                                ],
-                                "from": { "key_code": "keypad_9" },
-                                "to": [{ "key_code": "left_shift" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "product_id": 49738,
-                                                "vendor_id": 1133
-                                            }
-                                        ],
-                                        "type": "device_if"
-                                    }
-                                ],
-                                "from": { "key_code": "keypad_4" },
-                                "to": [{ "key_code": "end" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "product_id": 49738,
-                                                "vendor_id": 1133
-                                            }
-                                        ],
-                                        "type": "device_if"
-                                    }
-                                ],
                                 "from": { "key_code": "keypad_plus" },
                                 "to": [
                                     {
@@ -208,6 +160,32 @@
                                     }
                                 ],
                                 "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "G600 Mouse Layer-1 (Numbers & Symbols)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 49738,
+                                                "vendor_id": 1133
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    },
+                                    {
+                                        "name": "layer-1",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "key_code": "keypad_7" },
+                                "to": [{ "key_code": "home" }],
+                                "type": "basic"
                             },
                             {
                                 "conditions": [
@@ -219,6 +197,53 @@
                                             }
                                         ],
                                         "type": "device_if"
+                                    },
+                                    {
+                                        "name": "layer-1",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "key_code": "keypad_9" },
+                                "to": [{ "key_code": "left_shift" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 49738,
+                                                "vendor_id": 1133
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    },
+                                    {
+                                        "name": "layer-1",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "key_code": "keypad_4" },
+                                "to": [{ "key_code": "end" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            {
+                                                "product_id": 49738,
+                                                "vendor_id": 1133
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    },
+                                    {
+                                        "name": "layer-1",
+                                        "type": "variable_if",
+                                        "value": 1
                                     }
                                 ],
                                 "from": { "pointing_button": "button1" },
@@ -235,6 +260,11 @@
                                             }
                                         ],
                                         "type": "device_if"
+                                    },
+                                    {
+                                        "name": "layer-1",
+                                        "type": "variable_if",
+                                        "value": 1
                                     }
                                 ],
                                 "from": { "pointing_button": "button2" },
@@ -251,6 +281,11 @@
                                             }
                                         ],
                                         "type": "device_if"
+                                    },
+                                    {
+                                        "name": "layer-1",
+                                        "type": "variable_if",
+                                        "value": 1
                                     }
                                 ],
                                 "from": { "key_code": "scroll_wheel", "modifiers": { "optional": ["any"] } },
@@ -267,6 +302,11 @@
                                             }
                                         ],
                                         "type": "device_if"
+                                    },
+                                    {
+                                        "name": "layer-1",
+                                        "type": "variable_if",
+                                        "value": 1
                                     }
                                 ],
                                 "from": { "key_code": "scroll_wheel", "modifiers": { "mandatory": ["shift"] } },
