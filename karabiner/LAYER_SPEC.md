@@ -205,10 +205,10 @@ G600マウス（vendor_id: 1133, product_id: 49738）のテンキーボタンを
 | Keypad 1 | △ | 未割り当て |
 | Keypad 2 | △ | 未割り当て |
 | Keypad 3 | △ | 未割り当て |
-| Keypad = | Keypad = | テンキーイコール |
-| Keypad 0 | △ | 未割り当て |
+| Keypad = | △ | 未割り当て |
+| Keypad 0 | Right Control + Print Screen  | Right Control + Print Screen |
 | Keypad . | △ | 未割り当て |
-| Keypad Enter | Keypad Enter | テンキーエンター |
+| Keypad Enter | △ | 未割り当て |
 | 左クリック | △ | 未割り当て |
 | 右クリック | △ | 未割り当て |
 | 中クリック | △ | 未割り当て |
