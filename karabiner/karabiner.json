@@ -288,7 +288,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "scroll_wheel", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "scroll_wheel",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "up_arrow" }],
                                 "type": "basic"
                             },
@@ -309,7 +312,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "scroll_wheel", "modifiers": { "mandatory": ["shift"] } },
+                                "from": {
+                                    "key_code": "scroll_wheel",
+                                    "modifiers": { "mandatory": ["shift"] }
+                                },
                                 "to": [{ "key_code": "down_arrow" }],
                                 "type": "basic"
                             }
@@ -411,8 +417,8 @@
                                     }
                                 ],
                                 "from": { "key_code": "q" },
-                                "to_if_held_down": [{ "key_code": "left_alt" }],
                                 "to_if_alone": [{ "key_code": "q" }],
+                                "to_if_held_down": [{ "key_code": "left_alt" }],
                                 "type": "basic"
                             },
                             {
@@ -434,8 +440,8 @@
                                     }
                                 ],
                                 "from": { "key_code": "r" },
-                                "to_if_held_down": [{ "key_code": "left_alt" }],
                                 "to_if_alone": [{ "key_code": "r" }],
+                                "to_if_held_down": [{ "key_code": "left_alt" }],
                                 "type": "basic"
                             },
                             {
@@ -457,8 +463,8 @@
                                     }
                                 ],
                                 "from": { "key_code": "a" },
-                                "to_if_held_down": [{ "key_code": "right_control" }],
                                 "to_if_alone": [{ "key_code": "a" }],
+                                "to_if_held_down": [{ "key_code": "right_control" }],
                                 "type": "basic"
                             },
                             {
@@ -480,8 +486,8 @@
                                     }
                                 ],
                                 "from": { "key_code": "z" },
-                                "to_if_held_down": [{ "key_code": "left_shift" }],
                                 "to_if_alone": [{ "key_code": "z" }],
+                                "to_if_held_down": [{ "key_code": "left_shift" }],
                                 "type": "basic"
                             },
                             {
@@ -503,8 +509,8 @@
                                     }
                                 ],
                                 "from": { "key_code": "s" },
-                                "to_if_held_down": [{ "key_code": "left_command" }],
                                 "to_if_alone": [{ "key_code": "s" }],
+                                "to_if_held_down": [{ "key_code": "left_command" }],
                                 "type": "basic"
                             },
                             {
@@ -512,8 +518,8 @@
                                     {
                                         "identifiers": [
                                             {
-                                                "is_keyboard": true,
-                                                "is_built_in_keyboard": true
+                                                "is_built_in_keyboard": true,
+                                                "is_keyboard": true
                                             }
                                         ],
                                         "type": "device_if"
@@ -528,8 +534,8 @@
                                     {
                                         "identifiers": [
                                             {
-                                                "is_keyboard": true,
-                                                "is_built_in_keyboard": true
+                                                "is_built_in_keyboard": true,
+                                                "is_keyboard": true
                                             }
                                         ],
                                         "type": "device_if"
@@ -544,8 +550,8 @@
                                     {
                                         "identifiers": [
                                             {
-                                                "is_keyboard": true,
-                                                "is_built_in_keyboard": true
+                                                "is_built_in_keyboard": true,
+                                                "is_keyboard": true
                                             }
                                         ],
                                         "type": "device_if"
@@ -574,8 +580,8 @@
                                     }
                                 ],
                                 "from": { "key_code": "f" },
-                                "to_if_held_down": [{ "key_code": "right_control" }],
                                 "to_if_alone": [{ "key_code": "f" }],
+                                "to_if_held_down": [{ "key_code": "right_control" }],
                                 "type": "basic"
                             },
                             {
@@ -597,8 +603,8 @@
                                     }
                                 ],
                                 "from": { "key_code": "g" },
-                                "to_if_held_down": [{ "key_code": "left_command" }],
                                 "to_if_alone": [{ "key_code": "g" }],
+                                "to_if_held_down": [{ "key_code": "left_command" }],
                                 "type": "basic"
                             },
                             {
@@ -620,8 +626,8 @@
                                     }
                                 ],
                                 "from": { "key_code": "v" },
-                                "to_if_held_down": [{ "key_code": "left_shift" }],
                                 "to_if_alone": [{ "key_code": "v" }],
+                                "to_if_held_down": [{ "key_code": "left_shift" }],
                                 "type": "basic"
                             }
                         ]
@@ -637,9 +643,12 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "q", "modifiers": { "optional": ["any"] } },
-                                "to_if_held_down": [{ "key_code": "left_option" }],
+                                "from": {
+                                    "key_code": "q",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to_if_alone": [{ "key_code": "grave_accent_and_tilde" }],
+                                "to_if_held_down": [{ "key_code": "left_option" }],
                                 "type": "basic"
                             },
                             {
@@ -650,7 +659,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "w", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "w",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "7" }],
                                 "type": "basic"
                             },
@@ -662,7 +674,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "e", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "8" }],
                                 "type": "basic"
                             },
@@ -674,7 +689,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "r", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "r",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "9" }],
                                 "type": "basic"
                             },
@@ -686,7 +704,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "t", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "t",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "quote" }],
                                 "type": "basic"
                             },
@@ -698,7 +719,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "y", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "y",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "f1" }],
                                 "type": "basic"
                             },
@@ -710,7 +734,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "u", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "u",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "f2" }],
                                 "type": "basic"
                             },
@@ -722,7 +749,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "i", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "f3" }],
                                 "type": "basic"
                             },
@@ -734,7 +764,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "o", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "o",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "f4" }],
                                 "type": "basic"
                             },
@@ -746,7 +779,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "p", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "p",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "f5" }],
                                 "type": "basic"
                             },
@@ -758,9 +794,12 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "a", "modifiers": { "optional": ["any"] } },
-                                "to_if_held_down": [{ "key_code": "right_control" }],
+                                "from": {
+                                    "key_code": "a",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to_if_alone": [{ "key_code": "hyphen" }],
+                                "to_if_held_down": [{ "key_code": "right_control" }],
                                 "type": "basic"
                             },
                             {
@@ -771,7 +810,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "s", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "4" }],
                                 "type": "basic"
                             },
@@ -783,7 +825,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "d", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "5" }],
                                 "type": "basic"
                             },
@@ -795,7 +840,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "f", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "f",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "6" }],
                                 "type": "basic"
                             },
@@ -807,9 +855,12 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "g", "modifiers": { "optional": ["any"] } },
-                                "to_if_held_down": [{ "key_code": "left_command" }],
+                                "from": {
+                                    "key_code": "g",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to_if_alone": [{ "key_code": "period" }],
+                                "to_if_held_down": [{ "key_code": "left_command" }],
                                 "type": "basic"
                             },
                             {
@@ -820,7 +871,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "h", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "f6" }],
                                 "type": "basic"
                             },
@@ -832,7 +886,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "j", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "f7" }],
                                 "type": "basic"
                             },
@@ -844,7 +901,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "k", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "f8" }],
                                 "type": "basic"
                             },
@@ -856,7 +916,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "l", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "f9" }],
                                 "type": "basic"
                             },
@@ -868,7 +931,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "semicolon", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "semicolon",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "f10" }],
                                 "type": "basic"
                             },
@@ -880,9 +946,12 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "z", "modifiers": { "optional": ["any"] } },
-                                "to_if_held_down": [{ "key_code": "left_shift" }],
+                                "from": {
+                                    "key_code": "z",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to_if_alone": [{ "key_code": "equal_sign" }],
+                                "to_if_held_down": [{ "key_code": "left_shift" }],
                                 "type": "basic"
                             },
                             {
@@ -893,7 +962,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "x", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "x",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "1" }],
                                 "type": "basic"
                             },
@@ -905,7 +977,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "c", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "2" }],
                                 "type": "basic"
                             },
@@ -917,7 +992,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "v", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "v",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "3" }],
                                 "type": "basic"
                             },
@@ -929,7 +1007,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "b", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "b",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "0" }],
                                 "type": "basic"
                             },
@@ -941,7 +1022,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "n", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "n",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "f11" }],
                                 "type": "basic"
                             },
@@ -953,7 +1037,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "m", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "f12" }],
                                 "type": "basic"
                             },
@@ -965,7 +1052,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "comma", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "comma",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "open_bracket" }],
                                 "type": "basic"
                             },
@@ -977,7 +1067,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "period", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "period",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "close_bracket" }],
                                 "type": "basic"
                             },
@@ -989,7 +1082,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "slash", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "slash",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "backslash" }],
                                 "type": "basic"
                             }
@@ -1006,7 +1102,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "q", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "q",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "left_command" }],
                                 "type": "basic"
                             },
@@ -1018,7 +1117,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "w", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "w",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "mouse_key": { "horizontal_wheel": -32 } }],
                                 "type": "basic"
                             },
@@ -1030,7 +1132,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "e", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "mouse_key": { "vertical_wheel": 32 } }],
                                 "type": "basic"
                             },
@@ -1042,7 +1147,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "r", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "r",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "mouse_key": { "horizontal_wheel": 32 } }],
                                 "type": "basic"
                             },
@@ -1054,7 +1162,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "t", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "t",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "pointing_button": "button5" }],
                                 "type": "basic"
                             },
@@ -1066,7 +1177,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "y", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "y",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "home" }],
                                 "type": "basic"
                             },
@@ -1078,7 +1192,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "u", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "u",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "page_down" }],
                                 "type": "basic"
                             },
@@ -1090,7 +1207,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "i", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "page_up" }],
                                 "type": "basic"
                             },
@@ -1102,7 +1222,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "o", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "o",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "end" }],
                                 "type": "basic"
                             },
@@ -1114,7 +1237,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "p", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "p",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "insert" }],
                                 "type": "basic"
                             },
@@ -1126,9 +1252,12 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "a", "modifiers": { "optional": ["any"] } },
-                                "to_if_held_down": [{ "key_code": "right_control" }],
+                                "from": {
+                                    "key_code": "a",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to_if_alone": [{ "key_code": "hyphen" }],
+                                "to_if_held_down": [{ "key_code": "right_control" }],
                                 "type": "basic"
                             },
                             {
@@ -1139,9 +1268,12 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "s", "modifiers": { "optional": ["any"] } },
-                                "to_if_held_down": [{ "key_code": "left_command" }],
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to_if_alone": [{ "key_code": "return_or_enter" }],
+                                "to_if_held_down": [{ "key_code": "left_command" }],
                                 "type": "basic"
                             },
                             {
@@ -1152,7 +1284,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "d", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "mouse_key": { "vertical_wheel": -32 } }],
                                 "type": "basic"
                             },
@@ -1164,7 +1299,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "f", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "f",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "pointing_button": "button1" }],
                                 "type": "basic"
                             },
@@ -1176,7 +1314,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "g", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "g",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "pointing_button": "button3" }],
                                 "type": "basic"
                             },
@@ -1188,7 +1329,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "h", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "left_arrow" }],
                                 "type": "basic"
                             },
@@ -1200,7 +1344,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "j", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "down_arrow" }],
                                 "type": "basic"
                             },
@@ -1212,7 +1359,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "k", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "up_arrow" }],
                                 "type": "basic"
                             },
@@ -1224,7 +1374,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "l", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "right_arrow" }],
                                 "type": "basic"
                             },
@@ -1236,7 +1389,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "z", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "z",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "left_control" }],
                                 "type": "basic"
                             },
@@ -1248,7 +1404,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "x", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "x",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "delete_or_backspace" }],
                                 "type": "basic"
                             },
@@ -1260,7 +1419,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "c", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "delete_forward" }],
                                 "type": "basic"
                             },
@@ -1272,7 +1434,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "v", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "v",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "pointing_button": "button2" }],
                                 "type": "basic"
                             },
@@ -1284,7 +1449,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "b", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "b",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "pointing_button": "button4" }],
                                 "type": "basic"
                             },
@@ -1296,7 +1464,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "n", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "n",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "return_or_enter" }],
                                 "type": "basic"
                             },
@@ -1308,7 +1479,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "m", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "spacebar" }],
                                 "type": "basic"
                             },
@@ -1320,7 +1494,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "comma", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "comma",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "delete_or_backspace" }],
                                 "type": "basic"
                             },
@@ -1332,7 +1509,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "period", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "period",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "delete_forward" }],
                                 "type": "basic"
                             },
@@ -1344,7 +1524,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "slash", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "slash",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "caps_lock" }],
                                 "type": "basic"
                             },
@@ -1356,7 +1539,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "semicolon", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "semicolon",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "type": "basic"
                             }
                         ]
@@ -1372,8 +1558,16 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "q", "modifiers": { "optional": ["any"] } },
-                                "to": [{ "key_code": "q", "modifiers": ["left_command"] }],
+                                "from": {
+                                    "key_code": "q",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "q",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -1384,8 +1578,16 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "w", "modifiers": { "optional": ["any"] } },
-                                "to": [{ "key_code": "w", "modifiers": ["left_command"] }],
+                                "from": {
+                                    "key_code": "w",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "w",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -1396,8 +1598,16 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "e", "modifiers": { "optional": ["any"] } },
-                                "to": [{ "key_code": "e", "modifiers": ["left_command"] }],
+                                "from": {
+                                    "key_code": "e",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "e",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -1408,8 +1618,16 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "r", "modifiers": { "optional": ["any"] } },
-                                "to": [{ "key_code": "r", "modifiers": ["left_command"] }],
+                                "from": {
+                                    "key_code": "r",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "r",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -1420,8 +1638,16 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "t", "modifiers": { "optional": ["any"] } },
-                                "to": [{ "key_code": "t", "modifiers": ["left_command"] }],
+                                "from": {
+                                    "key_code": "t",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "t",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -1432,8 +1658,16 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "y", "modifiers": { "optional": ["any"] } },
-                                "to": [{ "key_code": "y", "modifiers": ["left_command"] }],
+                                "from": {
+                                    "key_code": "y",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "y",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -1444,8 +1678,16 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "u", "modifiers": { "optional": ["any"] } },
-                                "to": [{ "key_code": "open_bracket", "modifiers": ["left_command", "left_shift"] }],
+                                "from": {
+                                    "key_code": "u",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "open_bracket",
+                                        "modifiers": ["left_command", "left_shift"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -1456,8 +1698,16 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "i", "modifiers": { "optional": ["any"] } },
-                                "to": [{ "key_code": "close_bracket", "modifiers": ["left_command", "left_shift"] }],
+                                "from": {
+                                    "key_code": "i",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "close_bracket",
+                                        "modifiers": ["left_command", "left_shift"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -1468,8 +1718,16 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "o", "modifiers": { "optional": ["any"] } },
-                                "to": [{ "key_code": "o", "modifiers": ["left_command"] }],
+                                "from": {
+                                    "key_code": "o",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "o",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -1480,8 +1738,16 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "p", "modifiers": { "optional": ["any"] } },
-                                "to": [{ "key_code": "p", "modifiers": ["left_command"] }],
+                                "from": {
+                                    "key_code": "p",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "p",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -1492,8 +1758,16 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "a", "modifiers": { "optional": ["any"] } },
-                                "to": [{ "key_code": "a", "modifiers": ["left_command"] }],
+                                "from": {
+                                    "key_code": "a",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "a",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -1504,8 +1778,16 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "s", "modifiers": { "optional": ["any"] } },
-                                "to": [{ "key_code": "s", "modifiers": ["left_command"] }],
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "s",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -1516,8 +1798,16 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "d", "modifiers": { "optional": ["any"] } },
-                                "to": [{ "key_code": "d", "modifiers": ["left_command"] }],
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "d",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -1528,8 +1818,16 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "f", "modifiers": { "optional": ["any"] } },
-                                "to": [{ "key_code": "f", "modifiers": ["left_command"] }],
+                                "from": {
+                                    "key_code": "f",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "f",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -1540,8 +1838,16 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "g", "modifiers": { "optional": ["any"] } },
-                                "to": [{ "key_code": "g", "modifiers": ["left_command"] }],
+                                "from": {
+                                    "key_code": "g",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "g",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -1552,8 +1858,16 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "h", "modifiers": { "optional": ["any"] } },
-                                "to": [{ "key_code": "h", "modifiers": ["left_command"] }],
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "h",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -1564,8 +1878,16 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "j", "modifiers": { "optional": ["any"] } },
-                                "to": [{ "key_code": "down_arrow", "modifiers": ["left_control"] }],
+                                "from": {
+                                    "key_code": "j",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "down_arrow",
+                                        "modifiers": ["left_control"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -1576,8 +1898,16 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "k", "modifiers": { "optional": ["any"] } },
-                                "to": [{ "key_code": "up_arrow", "modifiers": ["left_control"] }],
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow",
+                                        "modifiers": ["left_control"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -1588,8 +1918,16 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "l", "modifiers": { "optional": ["any"] } },
-                                "to": [{ "key_code": "l", "modifiers": ["left_command"] }],
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "l",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -1600,8 +1938,16 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "z", "modifiers": { "optional": ["any"] } },
-                                "to": [{ "key_code": "z", "modifiers": ["left_command"] }],
+                                "from": {
+                                    "key_code": "z",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "z",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -1612,8 +1958,16 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "x", "modifiers": { "optional": ["any"] } },
-                                "to": [{ "key_code": "x", "modifiers": ["left_command"] }],
+                                "from": {
+                                    "key_code": "x",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "x",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -1624,8 +1978,16 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "c", "modifiers": { "optional": ["any"] } },
-                                "to": [{ "key_code": "c", "modifiers": ["left_command"] }],
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "c",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -1636,8 +1998,16 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "v", "modifiers": { "optional": ["any"] } },
-                                "to": [{ "key_code": "v", "modifiers": ["left_command"] }],
+                                "from": {
+                                    "key_code": "v",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "v",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -1648,8 +2018,16 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "b", "modifiers": { "optional": ["any"] } },
-                                "to": [{ "key_code": "b", "modifiers": ["left_command"] }],
+                                "from": {
+                                    "key_code": "b",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "b",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -1660,8 +2038,16 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "n", "modifiers": { "optional": ["any"] } },
-                                "to": [{ "key_code": "n", "modifiers": ["left_command"] }],
+                                "from": {
+                                    "key_code": "n",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "n",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -1672,8 +2058,16 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "m", "modifiers": { "optional": ["any"] } },
-                                "to": [{ "key_code": "m", "modifiers": ["left_command"] }],
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "m",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -1684,8 +2078,16 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "comma", "modifiers": { "optional": ["any"] } },
-                                "to": [{ "key_code": "comma", "modifiers": ["left_command"] }],
+                                "from": {
+                                    "key_code": "comma",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "comma",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -1696,7 +2098,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "period", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "period",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": [{ "key_code": "f11" }],
                                 "type": "basic"
                             },
@@ -1708,8 +2113,16 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "slash", "modifiers": { "optional": ["any"] } },
-                                "to": [{ "key_code": "slash", "modifiers": ["left_command"] }],
+                                "from": {
+                                    "key_code": "slash",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "slash",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -1720,7 +2133,10 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "semicolon", "modifiers": { "optional": ["any"] } },
+                                "from": {
+                                    "key_code": "semicolon",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "type": "basic"
                             }
                         ]
@@ -1735,6 +2151,31 @@
                         "vendor_id": 1133
                     },
                     "ignore": false
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 34,
+                        "vendor_id": 1278
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "left_control" },
+                            "to": [{ "key_code": "right_command" }]
+                        },
+                        {
+                            "from": { "key_code": "left_command" },
+                            "to": [{ "key_code": "left_control" }]
+                        },
+                        {
+                            "from": { "key_code": "japanese_pc_nfer" },
+                            "to": [{ "key_code": "japanese_eisuu" }]
+                        },
+                        {
+                            "from": { "key_code": "japanese_pc_xfer" },
+                            "to": [{ "key_code": "japanese_kana" }]
+                        }
+                    ]
                 }
             ],
             "name": "default",
