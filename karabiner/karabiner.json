@@ -1719,6 +1719,40 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "layer-2",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "1",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{
+                                    "shell_command": "/Users/mbamb/.config/karabiner/scripts/type_password.sh password1"
+                                }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "layer-2",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "2",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{
+                                    "shell_command": "/Users/mbamb/.config/karabiner/scripts/type_password.sh password2"
+                                }],
+                                "type": "basic"
                             }
                         ]
                     },
