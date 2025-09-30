@@ -1732,9 +1732,7 @@
                                     "key_code": "1",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{
-                                    "shell_command": "/Users/mbamb/.config/karabiner/scripts/type_password.sh password1"
-                                }],
+                                "to": [{ "shell_command": "/Users/mbamb/.config/karabiner/scripts/type_password.sh password1" }],
                                 "type": "basic"
                             },
                             {
@@ -1749,9 +1747,7 @@
                                     "key_code": "2",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{
-                                    "shell_command": "/Users/mbamb/.config/karabiner/scripts/type_password.sh password2"
-                                }],
+                                "to": [{ "shell_command": "/Users/mbamb/.config/karabiner/scripts/type_password.sh password2" }],
                                 "type": "basic"
                             }
                         ]
@@ -2383,6 +2379,37 @@
                         {
                             "from": { "key_code": "left_control" },
                             "to": [{ "key_code": "right_command" }]
+                        }
+                    ]
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 24801,
+                        "vendor_id": 6127
+                    },
+                    "ignore": false,
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "japanese_pc_nfer" },
+                            "to": [{ "key_code": "japanese_eisuu" }]
+                        },
+                        {
+                            "from": { "key_code": "japanese_pc_xfer" },
+                            "to": [{ "key_code": "japanese_kana" }]
+                        },
+                        {
+                            "from": { "key_code": "caps_lock" },
+                            "to": [{ "key_code": "right_command" }]
+                        },
+                        {
+                            "from": { "key_code": "left_control" },
+                            "to": [{ "key_code": "caps_lock" }]
+                        },
+                        {
+                            "from": { "key_code": "left_command" },
+                            "to": [{ "key_code": "left_control" }]
                         }
                     ]
                 }

@@ -75,6 +75,14 @@
 - **japanese_pc_nfer（無変換）** → japanese_eisuu
 - **japanese_pc_xfer（変換）** → japanese_kana
 
+#### ThinkPad Keyboard
+- **識別**: vendor_id: 6127, product_id: 24801
+- **Caps Lock** → Right Command
+- **Left Control** → Caps Lock
+- **Left Command** → Left Control
+- **japanese_pc_nfer（無変換）** → japanese_eisuu
+- **japanese_pc_xfer（変換）** → japanese_kana
+
 ### 全キーボード共通
 
 ## Layer-1 (Numbers & Symbols)
