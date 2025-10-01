@@ -260,8 +260,8 @@ G600マウス（vendor_id: 1133, product_id: 49738）のテンキーボタンを
 | f19 | △ | 透過 |
 | f20 | △ | 透過 |
 | f6 | △ | 透過 |
-| button1 | △ | 透過 |
-| button2 | △ | 透過 |
+| button1 | ← | 左矢印 |
+| button2 | → | 右矢印 |
 | button3 | △ | 透過 |
 | button7 | △ | 透過 |
 | button8 | △ | 透過 |
