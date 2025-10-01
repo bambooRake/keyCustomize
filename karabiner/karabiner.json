@@ -138,12 +138,10 @@
                                     "key_code": "a",
                                     "modifiers": { "optional": ["any"] }
                                 },
+                                "to_delayed_action": { "to_if_canceled": [{ "key_code": "a" }] },
                                 "to_if_alone": {
                                     "halt": true,
                                     "key_code": "a"
-                                },
-                                "to_delayed_action": {
-                                    "to_if_canceled": [{ "key_code": "a" }]
                                 },
                                 "to_if_held_down": {
                                     "halt": true,
@@ -180,12 +178,10 @@
                                     "key_code": "s",
                                     "modifiers": { "optional": ["any"] }
                                 },
+                                "to_delayed_action": { "to_if_canceled": [{ "key_code": "s" }] },
                                 "to_if_alone": {
                                     "halt": true,
                                     "key_code": "s"
-                                },
-                                "to_delayed_action": {
-                                    "to_if_canceled": [{ "key_code": "s" }]
                                 },
                                 "to_if_held_down": {
                                     "halt": true,
@@ -222,12 +218,10 @@
                                     "key_code": "f",
                                     "modifiers": { "optional": ["any"] }
                                 },
+                                "to_delayed_action": { "to_if_canceled": [{ "key_code": "f" }] },
                                 "to_if_alone": {
                                     "halt": true,
                                     "key_code": "f"
-                                },
-                                "to_delayed_action": {
-                                    "to_if_canceled": [{ "key_code": "f" }]
                                 },
                                 "to_if_held_down": {
                                     "halt": true,
@@ -264,12 +258,10 @@
                                     "key_code": "g",
                                     "modifiers": { "optional": ["any"] }
                                 },
+                                "to_delayed_action": { "to_if_canceled": [{ "key_code": "g" }] },
                                 "to_if_alone": {
                                     "halt": true,
                                     "key_code": "g"
-                                },
-                                "to_delayed_action": {
-                                    "to_if_canceled": [{ "key_code": "g" }]
                                 },
                                 "to_if_held_down": {
                                     "halt": true,
@@ -643,12 +635,10 @@
                                     "key_code": "q",
                                     "modifiers": { "optional": ["any"] }
                                 },
+                                "to_delayed_action": { "to_if_canceled": [{ "key_code": "q" }] },
                                 "to_if_alone": {
                                     "halt": true,
                                     "key_code": "q"
-                                },
-                                "to_delayed_action": {
-                                    "to_if_canceled": [{ "key_code": "q" }]
                                 },
                                 "to_if_held_down": {
                                     "halt": true,
@@ -678,12 +668,10 @@
                                     "key_code": "r",
                                     "modifiers": { "optional": ["any"] }
                                 },
+                                "to_delayed_action": { "to_if_canceled": [{ "key_code": "r" }] },
                                 "to_if_alone": {
                                     "halt": true,
                                     "key_code": "r"
-                                },
-                                "to_delayed_action": {
-                                    "to_if_canceled": [{ "key_code": "r" }]
                                 },
                                 "to_if_held_down": {
                                     "halt": true,
@@ -713,12 +701,10 @@
                                     "key_code": "a",
                                     "modifiers": { "optional": ["any"] }
                                 },
+                                "to_delayed_action": { "to_if_canceled": [{ "key_code": "a" }] },
                                 "to_if_alone": {
                                     "halt": true,
                                     "key_code": "a"
-                                },
-                                "to_delayed_action": {
-                                    "to_if_canceled": [{ "key_code": "a" }]
                                 },
                                 "to_if_held_down": {
                                     "halt": true,
@@ -748,12 +734,10 @@
                                     "key_code": "z",
                                     "modifiers": { "optional": ["any"] }
                                 },
+                                "to_delayed_action": { "to_if_canceled": [{ "key_code": "z" }] },
                                 "to_if_alone": {
                                     "halt": true,
                                     "key_code": "z"
-                                },
-                                "to_delayed_action": {
-                                    "to_if_canceled": [{ "key_code": "z" }]
                                 },
                                 "to_if_held_down": {
                                     "halt": true,
@@ -783,12 +767,10 @@
                                     "key_code": "s",
                                     "modifiers": { "optional": ["any"] }
                                 },
+                                "to_delayed_action": { "to_if_canceled": [{ "key_code": "s" }] },
                                 "to_if_alone": {
                                     "halt": true,
                                     "key_code": "s"
-                                },
-                                "to_delayed_action": {
-                                    "to_if_canceled": [{ "key_code": "s" }]
                                 },
                                 "to_if_held_down": {
                                     "halt": true,
@@ -866,12 +848,10 @@
                                     "key_code": "f",
                                     "modifiers": { "optional": ["any"] }
                                 },
+                                "to_delayed_action": { "to_if_canceled": [{ "key_code": "f" }] },
                                 "to_if_alone": {
                                     "halt": true,
                                     "key_code": "f"
-                                },
-                                "to_delayed_action": {
-                                    "to_if_canceled": [{ "key_code": "f" }]
                                 },
                                 "to_if_held_down": {
                                     "halt": true,
@@ -901,12 +881,10 @@
                                     "key_code": "g",
                                     "modifiers": { "optional": ["any"] }
                                 },
+                                "to_delayed_action": { "to_if_canceled": [{ "key_code": "g" }] },
                                 "to_if_alone": {
                                     "halt": true,
                                     "key_code": "g"
-                                },
-                                "to_delayed_action": {
-                                    "to_if_canceled": [{ "key_code": "g" }]
                                 },
                                 "to_if_held_down": {
                                     "halt": true,
@@ -936,12 +914,10 @@
                                     "key_code": "v",
                                     "modifiers": { "optional": ["any"] }
                                 },
+                                "to_delayed_action": { "to_if_canceled": [{ "key_code": "v" }] },
                                 "to_if_alone": {
                                     "halt": true,
                                     "key_code": "v"
-                                },
-                                "to_delayed_action": {
-                                    "to_if_canceled": [{ "key_code": "v" }]
                                 },
                                 "to_if_held_down": {
                                     "halt": true,
@@ -2495,14 +2471,6 @@
             "devices": [
                 {
                     "identifiers": {
-                        "is_pointing_device": true,
-                        "product_id": 49738,
-                        "vendor_id": 1133
-                    },
-                    "ignore": false
-                },
-                {
-                    "identifiers": {
                         "is_keyboard": true,
                         "product_id": 34,
                         "vendor_id": 1278
@@ -2536,6 +2504,10 @@
                     "ignore": false,
                     "simple_modifications": [
                         {
+                            "from": { "key_code": "caps_lock" },
+                            "to": [{ "key_code": "right_command" }]
+                        },
+                        {
                             "from": { "key_code": "japanese_pc_nfer" },
                             "to": [{ "key_code": "japanese_eisuu" }]
                         },
@@ -2544,18 +2516,22 @@
                             "to": [{ "key_code": "japanese_kana" }]
                         },
                         {
-                            "from": { "key_code": "caps_lock" },
-                            "to": [{ "key_code": "right_command" }]
+                            "from": { "key_code": "left_command" },
+                            "to": [{ "key_code": "left_control" }]
                         },
                         {
                             "from": { "key_code": "left_control" },
                             "to": [{ "key_code": "caps_lock" }]
-                        },
-                        {
-                            "from": { "key_code": "left_command" },
-                            "to": [{ "key_code": "left_control" }]
                         }
                     ]
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 49738,
+                        "vendor_id": 1133
+                    },
+                    "ignore": true
                 }
             ],
             "name": "default",
