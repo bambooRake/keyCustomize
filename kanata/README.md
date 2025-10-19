@@ -28,3 +28,23 @@ Notes
 - `deflayermap` + `process-unmapped-keys yes` を採用。必要なら `defsrc` を定義してください。
 - Tap/Hold パラメータは仕様どおり: `tap-repress=170ms`, `hold=220ms`。
 - バックスラッシュは環境依存で扱いが難しいため一旦 `/` のまま。必要に応じて差し替えてください。
+Interception (wintercept) でRDP対応
+- 目的: RDP先へ入力を伝搬しやすくするため、カーネルドライバ経由に切替。
+- 手順概要:
+  1) ドライバ導入（管理者/再起動要）
+     - 取得: https://github.com/oblitum/Interception/releases （zip内の `install-interception.exe`）
+     - 管理者PowerShell/コマンドで: `install-interception.exe /install`
+     - 再起動
+  2) Kanata wintercept 版EXE取得
+     - https://github.com/jtroo/kanata/releases/tag/v1.9.0 から `kanata_wintercept.exe` を `kanata/bin/` に配置
+  3) 動作確認（コード確認が必要なら）
+     - `kanata_wintercept.exe --trace -c kanata/debug-listener.kbd`
+     - 英数/かな/無変換/変換などを押して `code:(XXXX)` を確認
+     - 必要なら `deflocalkeys-wintercept` に反映
+  4) 本運用
+     - `kanata_wintercept.exe -c kanata/config.kbd`
+
+備考
+- 競合回避: 他のリマッパ（AutoHotkey等）のキーボードフックは停止を推奨
+- アンインストール: `install-interception.exe /uninstall`（管理者/再起動）
+- `deflocalkeys-wintercept` は現在空。必要になったら `--trace` で取得した数値を入れてください。

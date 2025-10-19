@@ -25,6 +25,15 @@
   kana  121
 )
 
+;; If using the Interception driver variant (wintercept),
+;; you may add mappings here if you need OEM-specific keys.
+;; Current config uses muhenkan/henkan so this can remain empty.
+(deflocalkeys-wintercept
+  ;; Example (adjust after checking --trace codes on wintercept):
+  ;; eisuu 123
+  ;; kana  121
+)
+
 ;; Aliases: home row tap-hold modifiers and layer triggers
 (defalias
   ;; Home row mods (tap = letter, hold = modifier)
@@ -102,33 +111,36 @@
 (deflayermap (L2)
   _ use-defsrc
 
-  ;; Vim-like cursor
-  h left
-  j down
-  k up
-  l rght
-
-  ;; Navigation cluster
+  ;; 上段（Q〜P）
+  q (tap-hold 170 220 esc lalt)
+  w (mwheel-left 15 120)
+  e (mwheel-up   15 120)
+  r (mwheel-right 15 120)
+  t mfwd
   y home
   u pgdn
   i pgup
   o end
-  ;; p prtsc   ;; Uncomment if your environment key name is prtsc
+  p prtsc
 
-  ;; Mouse clicks: tap = click, hold = drag (hold button)
-  ;; Adjusted thresholds for snappier drag without hurting double-click:
-  ;; tap-repress=80ms, hold-timeout=150ms
+  ;; 中段（A〜;）
+  a (tap-hold 170 220 -   rctl)   ;; mac: Right Cmd → win: Right Ctrl
+  s (tap-hold 170 220 ret lmet)   ;; mac: Left Ctrl → win: Left Win
+  d (mwheel-down 15 120)
   f (tap-hold 80 150 mltp mlft)   ;; left:   tap-click / hold-drag
   g (tap-hold 80 150 mmtp mmid)   ;; middle: tap-click / hold-drag
+  h left
+  j down
+  k up
+  l rght
+  ; _
+
+  ;; 下段（Z〜/）
+  z (tap-hold 170 220 z lsft)      ;; TODO: tap=backslash（JP環境のキー名が判明次第更新）
+  x bspc
+  c del
   v (tap-hold 80 150 mrtp mrgt)   ;; right:  tap-click / hold-drag
-  t mfwd   ;; mouse forward button tap
-  b mbtp   ;; mouse back button tap
-
-  ;; Edit helpers
-  x bspc   ;; backspace
-  c del    ;; delete
-
-  ;; Extra function keys for custom bindings
+  b mbtp
   n f17
   m f16
   , f18
