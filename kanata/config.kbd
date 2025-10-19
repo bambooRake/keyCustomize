@@ -116,9 +116,11 @@
   ;; p prtsc   ;; Uncomment if your environment key name is prtsc
 
   ;; Mouse clicks: tap = click, hold = drag (hold button)
-  f (tap-hold 170 220 mltp mlft)  ;; left:   tap-click / hold-drag
-  g (tap-hold 170 220 mmtp mmid)  ;; middle: tap-click / hold-drag
-  v (tap-hold 170 220 mrtp mrgt)  ;; right:  tap-click / hold-drag
+  ;; Adjusted thresholds for snappier drag without hurting double-click:
+  ;; tap-repress=80ms, hold-timeout=150ms
+  f (tap-hold 80 150 mltp mlft)   ;; left:   tap-click / hold-drag
+  g (tap-hold 80 150 mmtp mmid)   ;; middle: tap-click / hold-drag
+  v (tap-hold 80 150 mrtp mrgt)   ;; right:  tap-click / hold-drag
   t mfwd   ;; mouse forward button tap
   b mbtp   ;; mouse back button tap
 
