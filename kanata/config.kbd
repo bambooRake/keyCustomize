@@ -1,0 +1,152 @@
+;; Kanata config generated from karabiner/LAYER_SPEC.md
+;; - Tap/Hold thresholds: tap-repress 170ms, hold 220ms
+;; - Layers: base(Layer-0), L1(numbers/symbols), L2(mouse/nav), L3(cursor)
+;;
+;; Notes:
+;; - Uses deflayermap with process-unmapped-keys for simplicity.
+;; - Windows meta key is lmet/rmet (Win key). Shift is lsft/rsft.
+;; - L2/L3 triggers are placeholders; bind to your actual JP keys if desired.
+
+(defcfg
+  ;; Process keys not listed in defsrc so tap-hold and layers behave correctly
+  process-unmapped-keys yes
+)
+
+;; Windows JP: define OEM-specific keys for 英数/かな from screenshot
+;; VK_OEM_PA1 with ScanCode 0x7B (123) and 0x79 (121)
+(deflocalkeys-win
+  eisuu 123  ;; 英数鍵（OEM固有, ScanCode 0x7B）
+  kana  121  ;; かな鍵（OEM固有, ScanCode 0x79）
+)
+
+;; If using the winIOv2 variant, mirror definitions here as well
+(deflocalkeys-winiov2
+  eisuu 123
+  kana  121
+)
+
+;; Aliases: home row tap-hold modifiers and layer triggers
+(defalias
+  ;; Home row mods (tap = letter, hold = modifier)
+  ;; Windows読み替え: Command→Control, Control→Win
+  Q_ALT  (tap-hold 170 220 q  lalt)
+  R_ALT  (tap-hold 170 220 r  lalt)
+  A_RCTL (tap-hold 170 220 a  rctl)  ;; mac: Right Command → win: Right Control
+  S_LMET (tap-hold 170 220 s  lmet)  ;; mac: Left Control  → win: Left Win
+  F_RCTL (tap-hold 170 220 f  rctl)  ;; mac: Right Command → win: Right Control
+  G_LMET (tap-hold 170 220 g  lmet)  ;; mac: Left Control  → win: Left Win
+  Z_LSFT (tap-hold 170 220 z  lsft)
+  V_LSFT (tap-hold 170 220 v  lsft)
+
+  ;; Layer triggers (tap = original key, hold = layer)
+  L1_TRIG (tap-hold 170 220 spc      (layer-while-held L1))
+  ;; Windows JP: 無変換/変換 が発火しているため、それをトリガーに使用
+  L2_TRIG (tap-hold 170 220 muhenkan (layer-while-held L2))
+  L3_TRIG (tap-hold 170 220 henkan   (layer-while-held L3))
+)
+
+;; Keep defsrc empty and rely on process-unmapped-keys and deflayermap
+;; You can later add a full defsrc if you want finer control.
+(defsrc)
+
+;; Base layer (Layer-0)
+(deflayermap (base)
+  _ use-defsrc
+
+  ;; Home row mods
+  q @Q_ALT
+  r @R_ALT
+  a @A_RCTL
+  s @S_LMET
+  f @F_RCTL
+  g @G_LMET
+  z @Z_LSFT
+  v @V_LSFT
+
+  ;; Layer triggers
+  spc      @L1_TRIG
+  muhenkan @L2_TRIG
+  henkan   @L3_TRIG
+)
+
+;; Layer-1: Numbers & Symbols (テンキー風)
+(deflayermap (L1)
+  _ use-defsrc
+
+  ;; 上段
+  q grv    ;; `
+  w 7
+  e 8
+  r 9
+  t '
+
+  ;; 中段（ホーム行）
+  a -
+  s 4
+  d 5
+  f 6
+  g .
+
+  ;; 下段
+  z =
+  x 1
+  c 2
+  v 3
+  b 0
+  , [
+  . ]
+  / /
+)
+
+;; Layer-2: Mouse & Navigation（仮置き: 透過）
+(deflayermap (L2)
+  _ use-defsrc
+
+  ;; Vim-like cursor
+  h left
+  j down
+  k up
+  l rght
+
+  ;; Navigation cluster
+  y home
+  u pgdn
+  i pgup
+  o end
+  ;; p prtsc   ;; Uncomment if your environment key name is prtsc
+
+  ;; Mouse clicks: tap = click, hold = drag (hold button)
+  f (tap-hold 170 220 mltp mlft)  ;; left:   tap-click / hold-drag
+  g (tap-hold 170 220 mmtp mmid)  ;; middle: tap-click / hold-drag
+  v (tap-hold 170 220 mrtp mrgt)  ;; right:  tap-click / hold-drag
+  t mfwd   ;; mouse forward button tap
+  b mbtp   ;; mouse back button tap
+
+  ;; Edit helpers
+  x bspc   ;; backspace
+  c del    ;; delete
+
+  ;; Extra function keys for custom bindings
+  n f17
+  m f16
+  , f18
+  . f19
+  / caps
+)
+
+;; Layer-3: Cursor Control（仮置き: 透過）
+(deflayermap (L3)
+  _ use-defsrc
+
+  ;; WASD-style cursor
+  w up
+  a left
+  s down
+  d rght
+
+  ;; Navigation duplicates for convenience
+  y home
+  u pgdn
+  i pgup
+  o end
+)

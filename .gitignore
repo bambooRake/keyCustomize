@@ -6,3 +6,6 @@ karabiner/automatic_backups
 **/.DS_Store
 !.gitignore
 karabiner/passwords.json
+!kanata/
+!kanata/**
+!LAYER_SPEC.md

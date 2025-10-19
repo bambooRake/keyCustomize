@@ -85,6 +85,22 @@
 
 ### 全キーボード共通
 
+#### Windowsでの修飾・レイヤートリガーの読み替え
+- 本仕様の修飾キー表記は macOS 前提。Windows では次の読み替えを適用：
+  - Control → Win（Windows キー）
+  - Command → Control
+  - 英数（EISUU）→ Windows の OEM 固有キー（VK_OEM_PA1）
+  - かな（KANA）→ Windows の OEM 固有キー（VK_OEM_PA1）
+- 例: 「Right Command」は Windows では「Right Control」、「Left Control」は Windows では「Left Win」。
+- Kanata（Windows）のキー名例: Win は `lmet/rmet`、Control は `lctl/rctl`。
+- 英数/かなは環境により OEM 固有キーとして報告されるため、Kanata では `deflocalkeys-win` でスキャンコードを定義して使用します。
+  - 参考（スクリーンショットより）:
+    - 英数: Virtual-Key `VK_OEM_PA1 (0xEB)`, ScanCode `0x7B` → 10進 `123`
+    - かな: Virtual-Key `VK_OEM_PA1 (0xFF/0xEB)`, ScanCode `0x79` → 10進 `121`
+  - Kanata 設定例:
+    - `(deflocalkeys-win  eisuu 123  kana 121)`
+    - エイリアス: `(tap-hold 170 220 eisuu (layer-while-held L2))` / `(tap-hold 170 220 kana (layer-while-held L3))`
+
 ## Layer-1 (Numbers & Symbols)
 **トリガー**: Space長押し
 
@@ -127,93 +143,8 @@
 ## Layer-2 (Mouse & Navigation)
 **トリガー**: 英数長押し
 
-| キー | 機能 | 説明 |
-|------|------|------|
-| **上段** |||
-| Q | 長押し→Left Alt、短押し→Escape | Escapeキー |
-| W | 水平スクロール左 | マウス横スクロール |
-| E | 垂直スクロール上 | マウス縦スクロール |
-| R | 水平スクロール右 | マウス横スクロール |
-| T | マウス進む(Button5) | ブラウザ進む |
-| Y | Home | 行頭移動 |
-| U | Page Down | ページダウン |
-| I | Page Up | ページアップ |
-| O | End | 行末移動 |
-| P | Print Screen | スクリーンショット |
-| **中段（ホーム行）** |||
-| A | 長押し→Right Command、短押し→- | ハイフン |
-| S | 長押し→Left Control、短押し→Enter | 改行・決定 |
-| D | 垂直スクロール下 | マウス縦スクロール |
-| F | 左クリック(Button1) | マウス左クリック |
-| G | 中クリック(Button3) | マウス中クリック |
-| H | ← | 左矢印（Vim風） |
-| J | ↓ | 下矢印（Vim風） |
-| K | ↑ | 上矢印（Vim風） |
-| L | → | 右矢印（Vim風） |
-| ; | △ | 下位レイヤー透過 |
-| **下段** |||
-| Z | 長押し→Left Shift、短押し→\ | バックスラッシュ |
-| X | Backspace | 後退削除 |
-| C | Delete | 前進削除 |
-| V | 右クリック(Button2) | マウス右クリック |
-| B | マウス戻る(Button4) | ブラウザ戻る |
-| N | F17 | ファンクションキー |
-| M | F16 | ファンクションキー |
-| , | F18 | ファンクションキー |
-| . | F19 | ファンクションキー |
-| / | Caps Lock | 大文字ロック |
+[... omitted 88 of 344 lines ...]
 
-## Layer-3 (Cursor Control)
-**トリガー**: 無変換 (japanese_kana) 長押し
-
-| キー | 機能 | 説明 |
-|------|------|------|
-| **上段** |||
-| Q | △ | 透過 |
-| W | ↑ | 上矢印 |
-| E | △ | 透過 |
-| R | △ | 透過 |
-| T | △ | 透過 |
-| Y | △ | 透過 |
-| U | △ | 透過 |
-| I | △ | 透過 |
-| O | △ | 透過 |
-| P | △ | 透過 |
-| **中段（ホーム行）** |||
-| A | ← | 左矢印 |
-| S | ↓ | 下矢印 |
-| D | → | 右矢印 |
-| F | △ | 透過 |
-| G | △ | 透過 |
-| H | △ | 透過 |
-| J | △ | 透過 |
-| K | △ | 透過 |
-| L | △ | 透過 |
-| ; | △ | 下位レイヤー透過 |
-| **下段** |||
-| Z | △ | 透過 |
-| X | △ | 透過 |
-| C | △ | 透過 |
-| V | △ | 透過 |
-| B | △ | 透過 |
-| N | △ | 透過 |
-| M | △ | 透過 |
-| , | △ | 透過 |
-| . | △ | 透過 |
-| / | △ | 透過 |
-
-## 特殊設定
-
-### Parallels対応（RDP & Input Switching）
-Parallelsアプリ使用時のみ：
-- Left Command ↔ Left Control入れ替え
-- Right Command ↔ Right Control入れ替え
-- Right Control + Q → Alt + F4
-
-#### 長押し修飾キーの入れ替え（RDP使用時）
-Parallelsアプリ使用時、長押し修飾キーのCommand/Controlを入れ替え：
-- A長押し → Right Control（通常時：Right Command）
-- S長押し → Left Command（通常時：Left Control）
 - F長押し → Right Control（通常時：Right Command）
 - G長押し → Left Command（通常時：Left Control）
 

@@ -1,0 +1,13 @@
+;; Minimal listener config: does not remap; logs events with --trace
+(defcfg
+  process-unmapped-keys yes
+)
+
+;; No explicit defsrc: rely on process-unmapped-keys
+(defsrc)
+
+;; Pass-through layer so nothing is remapped
+(deflayermap (base)
+  _ use-defsrc
+)
+
