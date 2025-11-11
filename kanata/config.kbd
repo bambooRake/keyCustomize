@@ -121,7 +121,7 @@
   u pgdn
   i pgup
   o end
-  p prtsc
+  p _
 
   ;; 中段（A〜;）
   a (tap-hold 170 220 -   rctl)   ;; mac: Right Cmd → win: Right Ctrl
@@ -146,6 +146,13 @@
   , f18
   . f19
   / caps
+)
+
+(platform (win winiov2 wintercept)
+  ;; Windows環境ではPrintScreenキーを有効化
+  (deflayermap (L2)
+    p prtsc
+  )
 )
 
 ;; Layer-3: Cursor Control（仮置き: 透過）
