@@ -972,6 +972,22 @@
                                     "key_code": "left_shift"
                                 },
                                 "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f11",
+                                    "modifiers": { "mandatory": ["option", "shift"] }
+                                },
+                                "to": [{ "shell_command": "/Users/mbamb/.config/karabiner/scripts/type_password.sh password1" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f12",
+                                    "modifiers": { "mandatory": ["option", "shift"] }
+                                },
+                                "to": [{ "shell_command": "/Users/mbamb/.config/karabiner/scripts/type_password.sh password2" }],
+                                "type": "basic"
                             }
                         ]
                     },
