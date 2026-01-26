@@ -10,6 +10,7 @@
                 "rules": [
                     {
                         "description": "RDP & Input Switching",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
@@ -51,28 +52,6 @@
                                 ],
                                 "from": { "key_code": "right_command" },
                                 "to": [{ "key_code": "right_control" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.parallels\\.winapp\\.",
-                                            "^com\\.parallels\\.desktop\\.console"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "q",
-                                    "modifiers": { "mandatory": ["right_control"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "f4",
-                                        "modifiers": ["left_option"]
-                                    }
-                                ],
                                 "type": "basic"
                             }
                         ]
