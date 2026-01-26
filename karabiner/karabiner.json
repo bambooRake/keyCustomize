@@ -53,7 +53,6 @@
                                 "to": [{ "key_code": "right_control" }],
                                 "type": "basic"
                             },
-
                             {
                                 "conditions": [
                                     {
@@ -80,6 +79,7 @@
                     },
                     {
                         "description": "RDP Long-press Modifier Keys",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
@@ -337,6 +337,7 @@
                     },
                     {
                         "description": "G600 Mouse Layer-0 (Base)",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
@@ -394,6 +395,7 @@
                     },
                     {
                         "description": "G600 Mouse Layer-1 (Numbers & Symbols)",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
@@ -558,6 +560,7 @@
                     },
                     {
                         "description": "Layer Triggers",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": { "key_code": "japanese_eisuu" },
@@ -632,6 +635,7 @@
                     },
                     {
                         "description": "Layer-0 (Default)",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
@@ -965,6 +969,7 @@
                     },
                     {
                         "description": "Layer-1 (Numbers & Symbols)",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1424,6 +1429,7 @@
                     },
                     {
                         "description": "Layer-2 (Mouse & Navigation)",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1912,6 +1918,7 @@
                     },
                     {
                         "description": "Layer-3 (Cursor Control)",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
