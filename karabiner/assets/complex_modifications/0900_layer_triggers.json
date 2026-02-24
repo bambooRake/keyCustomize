@@ -6,25 +6,92 @@
       "enabled": false,
       "manipulators": [
         {
-          "from": { "key_code": "japanese_eisuu" },
-          "to": [{ "set_variable": { "name": "layer-2", "value": 1 } }],
-          "to_after_key_up": [{ "set_variable": { "name": "layer-2", "value": 0 } }],
-          "to_if_alone": [{ "key_code": "japanese_eisuu" }],
-          "type": "basic"
+          "type": "basic",
+          "from": {
+            "key_code": "japanese_eisuu"
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "layer-2",
+                "value": 1
+              }
+            }
+          ],
+          "to_after_key_up": [
+            {
+              "set_variable": {
+                "name": "layer-2",
+                "value": 0
+              }
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "japanese_eisuu"
+            }
+          ]
         },
         {
-          "from": { "key_code": "japanese_kana" },
-          "to": [{ "set_variable": { "name": "layer-3", "value": 1 } }],
-          "to_after_key_up": [{ "set_variable": { "name": "layer-3", "value": 0 } }],
-          "to_if_alone": [{ "key_code": "japanese_kana" }],
-          "type": "basic"
+          "type": "basic",
+          "from": {
+            "key_code": "japanese_kana"
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "layer-3",
+                "value": 1
+              }
+            }
+          ],
+          "to_after_key_up": [
+            {
+              "set_variable": {
+                "name": "layer-3",
+                "value": 0
+              }
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "japanese_kana"
+            }
+          ]
         },
         {
-          "from": { "key_code": "spacebar" },
-          "to": [{ "set_variable": { "name": "layer-1", "value": 1 } }],
-          "to_after_key_up": [{ "set_variable": { "name": "layer-1", "value": 0 } }, { "set_variable": { "name": "layer-2", "value": 0 } }],
-          "to_if_alone": [{ "key_code": "spacebar" }],
-          "type": "basic"
+          "type": "basic",
+          "from": {
+            "key_code": "spacebar"
+          },
+          "to_if_alone": [
+            {
+              "key_code": "spacebar"
+            }
+          ],
+          "to_if_held_down": [
+            {
+              "set_variable": {
+                "name": "layer-1",
+                "value": 1
+              }
+            }
+          ],
+          "to_after_key_up": [
+            {
+              "set_variable": {
+                "name": "layer-1",
+                "value": 0
+              }
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_canceled": [
+              {
+                "key_code": "spacebar"
+              }
+            ]
+          }
         }
       ]
     }
