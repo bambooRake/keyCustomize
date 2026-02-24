@@ -5,98 +5,10 @@
       "description": "Layer-3 (Cursor Control)",
       "enabled": false,
       "manipulators": [
-        {
-          "conditions": [
-            {
-              "name": "layer-3",
-              "type": "variable_if",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "w",
-            "modifiers": {
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "up_arrow"
-            }
-          ],
-          "type": "basic"
-        },
-        {
-          "conditions": [
-            {
-              "name": "layer-3",
-              "type": "variable_if",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "a",
-            "modifiers": {
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "left_arrow"
-            }
-          ],
-          "type": "basic"
-        },
-        {
-          "conditions": [
-            {
-              "name": "layer-3",
-              "type": "variable_if",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "s",
-            "modifiers": {
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "down_arrow"
-            }
-          ],
-          "type": "basic"
-        },
-        {
-          "conditions": [
-            {
-              "name": "layer-3",
-              "type": "variable_if",
-              "value": 1
-            }
-          ],
-          "from": {
-            "key_code": "d",
-            "modifiers": {
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "to": [
-            {
-              "key_code": "right_arrow"
-            }
-          ],
-          "type": "basic"
-        }
+        {"from": {"key_code": "w", "modifiers": {"optional": ["any"]}}, "to": [{"key_code": "up_arrow"}], "type": "basic", "conditions": [{"name": "layer-3", "type": "variable_if", "value": 1}]},
+        {"from": {"key_code": "a", "modifiers": {"optional": ["any"]}}, "to": [{"key_code": "left_arrow"}], "type": "basic", "conditions": [{"name": "layer-3", "type": "variable_if", "value": 1}]},
+        {"from": {"key_code": "s", "modifiers": {"optional": ["any"]}}, "to": [{"key_code": "down_arrow"}], "type": "basic", "conditions": [{"name": "layer-3", "type": "variable_if", "value": 1}]},
+        {"from": {"key_code": "d", "modifiers": {"optional": ["any"]}}, "to": [{"key_code": "right_arrow"}], "type": "basic", "conditions": [{"name": "layer-3", "type": "variable_if", "value": 1}]}
       ]
     }
   ]
