@@ -1,6 +1,15 @@
 {
-  "title": "ZMK SOA39 Layers",
+  "title": "bamb_settings(Apple + Layers + Combos + Parallels)",
   "rules": [
+    {
+      "description": "Apple Inner Keyboard Swap Modifier Keys",
+      "enabled": true,
+      "manipulators": [
+        {"from":{"key_code":"left_control"},"to":[{"key_code":"left_command"}],"type":"basic","conditions":[{"identifiers":[{"is_built_in_keyboard":true,"is_keyboard":true}],"type":"device_if"}]},
+        {"from":{"key_code":"left_command"},"to":[{"key_code":"left_option"}],"type":"basic","conditions":[{"identifiers":[{"is_built_in_keyboard":true,"is_keyboard":true}],"type":"device_if"}]},
+        {"from":{"key_code":"left_option"},"to":[{"key_code":"left_control"}],"type":"basic","conditions":[{"identifiers":[{"is_built_in_keyboard":true,"is_keyboard":true}],"type":"device_if"}]}
+      ]
+    },
     {
       "description": "Layer Triggers",
       "enabled": true,
@@ -130,6 +139,24 @@
         {"from":{"key_code":"comma","modifiers":{"optional":["any"]}},"to":[{"pointing_button":"button2"}],"type":"basic","conditions":[{"name":"layer-3","type":"variable_if","value":1}]},
         {"from":{"key_code":"period","modifiers":{"optional":["any"]}},"to":[{"key_code":"vk_none"}],"type":"basic","conditions":[{"name":"layer-3","type":"variable_if","value":1}]},
         {"from":{"key_code":"slash","modifiers":{"optional":["any"]}},"to":[{"key_code":"right_shift"}],"type":"basic","conditions":[{"name":"layer-3","type":"variable_if","value":1}]}
+      ]
+    },
+    {
+      "description": "ZMK SOA39 Combos",
+      "enabled": true,
+      "manipulators": [
+        {"from":{"simultaneous":[{"key_code":"f"},{"key_code":"r"}],"modifiers":{"optional":["any"]},"simultaneous_options":{"detect_key_down_uninterruptedly":true,"key_down_order":"insensitive","key_up_order":"insensitive","key_up_when":"all"}},"to":[{"key_code":"f11","modifiers":["right_option","right_shift"]}],"type":"basic","parameters":{"basic.simultaneous_threshold_milliseconds":300}},
+        {"from":{"simultaneous":[{"key_code":"t"},{"key_code":"g"}],"modifiers":{"optional":["any"]},"simultaneous_options":{"detect_key_down_uninterruptedly":true,"key_down_order":"insensitive","key_up_order":"insensitive","key_up_when":"all"}},"to":[{"key_code":"f12","modifiers":["right_option","right_shift"]}],"type":"basic","parameters":{"basic.simultaneous_threshold_milliseconds":300}},
+        {"from":{"simultaneous":[{"key_code":"e"},{"key_code":"japanese_eisuu"}],"modifiers":{"optional":["any"]},"simultaneous_options":{"detect_key_down_uninterruptedly":true,"key_down_order":"insensitive","key_up_order":"insensitive","key_up_when":"all"}},"to":[{"set_variable":{"name":"layer-3","value":1}},{"key_code":"left_option","lazy":true}],"type":"basic","to_after_key_up":[{"set_variable":{"name":"layer-3","value":0}}],"parameters":{"basic.simultaneous_threshold_milliseconds":300}}
+      ]
+    },
+    {
+      "description": "Parallels Swap Command and Control",
+      "enabled": true,
+      "manipulators": [
+        {"type":"basic","from":{"key_code":"f","modifiers":{"optional":["any"]}},"to":[{"key_code":"j"}],"conditions":[{"type":"frontmost_application_if","bundle_identifiers":["^com\\.parallels\\.desktop\\.console$"]}]},
+        {"type":"basic","from":{"key_code":"left_option","modifiers":{"optional":["any"]}},"to":[{"key_code":"left_command"}],"conditions":[{"type":"frontmost_application_if","bundle_identifiers":["^com\\.parallels\\.desktop\\.console$"]}]},
+        {"type":"basic","from":{"key_code":"right_option","modifiers":{"optional":["any"]}},"to":[{"key_code":"right_command"}],"conditions":[{"type":"frontmost_application_if","bundle_identifiers":["^com\\.parallels\\.desktop\\.console$"]}]}
       ]
     }
   ]
