@@ -45,15 +45,15 @@
   ;; Layer-0 (Default) — home-row mods
   ;; ════════════════════════════════════════════
   ;; macOS modifiers: lctl=Control, lmet=Command(⌘), lalt=Option(⌥), lsft=Shift
-  q0 (tap-hold-release 200 250 q esc)
+  q0 (tap-hold-release 200 250 q (macro esc))   ;; 長押しでも esc は 1 回タップで固定
   w0 (tap-hold-release 200 250 w lctl)   ;; LalaPad: mt LGUI W → lctl
-  r0 (tap-hold-release 200 250 r Lang1)  ;; hold=かな
-  a0 (tap-hold-release 200 250 a lmet)   ;; LalaPad: mt LCTRL A → lmet
+  r0 (tap-hold-release 200 250 r (macro Lang1))  ;; hold=かな (1回タップ)
+  a0 (tap-hold-release 200 250 a lmet)           ;; LalaPad: mt LCTRL A → lmet
   s0 (tap-hold-release 200 250 s lalt)
   d0 (tap-hold-release 200 250 d (layer-while-held L2))  ;; LalaPad: lt 2 D
-  f0 (tap-hold-release 200 250 f Lang2)  ;; hold=英数
+  f0 (tap-hold-release 200 250 f (macro Lang2))  ;; hold=英数 (1回タップ)
   z0 (tap-hold-release 200 250 z lsft)
-  c0 (tap-hold-release 200 500 c caps)   ;; 500ms — 誤爆防止
+  c0 (tap-hold-release 200 500 c (macro caps))   ;; 500ms — 誤爆防止 / 1回タップ
 
   ;; ════════════════════════════════════════════
   ;; Layer-1 (Numbers & Symbols) — home-row mods
@@ -62,25 +62,25 @@
   w1 (tap-hold-release 200 250 \  lctl)   ;; LalaPad: mt LWIN BACKSLASH → lctl
   a1 (tap-hold-release 200 250 1  lmet)   ;; LalaPad: mt LCTRL N1 → lmet
   s1 (tap-hold-release 200 250 2  lalt)
-  d1 (tap-hold-release 200 250 3  [)      ;; LalaPad: mt LEFT_BRACKET N3
-  f1 (tap-hold-release 200 250 4  ])      ;; LalaPad: mt RIGHT_BRACKET N4
-  g1 (tap-hold-release 200 250 5  f5)
+  d1 (tap-hold-release 200 250 3  (macro [))   ;; LalaPad: mt LEFT_BRACKET N3
+  f1 (tap-hold-release 200 250 4  (macro ]))   ;; LalaPad: mt RIGHT_BRACKET N4
+  g1 (tap-hold-release 200 250 5  (macro f5))
   z1 (tap-hold-release 200 250 6  lsft)
-  x1 (tap-hold-release 200 250 7  ,)      ;; LalaPad: mt_tap COMMA N7
-  c1 (tap-hold-release 200 250 8  .)      ;; LalaPad: mt_tap DOT N8
-  v1 (tap-hold-release 200 250 9  ;)
-  b1 (tap-hold-release 200 250 0  \)
+  x1 (tap-hold-release 200 250 7  (macro ,))   ;; LalaPad: mt_tap COMMA N7
+  c1 (tap-hold-release 200 250 8  (macro .))   ;; LalaPad: mt_tap DOT N8
+  v1 (tap-hold-release 200 250 9  (macro ;))
+  b1 (tap-hold-release 200 250 0  (macro \))
 
   ;; ════════════════════════════════════════════
   ;; Layer-2 (Mouse & Navigation) — home-row mods + tap-dance
   ;; ════════════════════════════════════════════
-  q2 (tap-hold-release 200 250 esc f13)   ;; LalaPad: mt_tap PRINTSCREEN ESCAPE (PrtSc は F13 代替)
-  w2 (tap-hold-release 200 250 .   lctl)  ;; LalaPad: mt LWIN PERIOD → lctl
-  a2 (tap-hold-release 200 250 -   lmet)  ;; LalaPad: mt LCTRL MINUS → lmet
-  s2 (tap-hold-release 200 250 ret lalt)
-  z2 (tap-hold-release 200 250 ins lsft)
-  y2 (tap-hold-release 200 250 home end)
-  l2 (tap-hold-release 200 250 ralt ret)  ;; LalaPad: mt ENTER RIGHT_ALT (奇妙だが準拠)
+  q2 (tap-hold-release 200 250 esc  (macro f13))  ;; LalaPad: mt_tap PRINTSCREEN ESCAPE (PrtSc は F13 代替)
+  w2 (tap-hold-release 200 250 .    lctl)         ;; LalaPad: mt LWIN PERIOD → lctl
+  a2 (tap-hold-release 200 250 -    lmet)         ;; LalaPad: mt LCTRL MINUS → lmet
+  s2 (tap-hold-release 200 250 ret  lalt)
+  z2 (tap-hold-release 200 250 ins  lsft)
+  y2 (tap-hold-release 200 250 home (macro end))
+  l2 (tap-hold-release 200 250 ralt (macro ret))  ;; LalaPad: mt ENTER RIGHT_ALT (奇妙だが準拠)
   ;; wheel tap-dance — distance/interval は既存値 (75 / 2) を踏襲
   se2 (tap-dance 300 ((mwheel-up   75 2) (mwheel-left  75 2)))  ;; LalaPad: tp_msc_up_left
   sd2 (tap-dance 300 ((mwheel-down 75 2) (mwheel-right 75 2)))  ;; LalaPad: tp_msc_down_right
@@ -91,11 +91,11 @@
   ;; ════════════════════════════════════════════
   ;; LalaPad SYSTEM_LAYER の左手側準拠 (BT/reset 等は kanata で代替不可なので外し、
   ;; Mac で動く音量/明度のみ採用)。右手側は既存 kanata の L3 を維持 (deflayermap 参照)。
-  w3 (tap-hold-release 200 250 brup brdn) ;; LalaPad: mt_tap BRT_DEC BRT_INC
-  a3 (tap-hold-release 200 250 volu lmet) ;; LalaPad: mt LCTRL C_VOLUME_UP → lmet
-  s3 (tap-hold-release 200 250 ret  lalt) ;; LalaPad: mt LALT ENTER
-  z3 (tap-hold-release 200 250 vold lsft) ;; LalaPad: mt LSHIFT C_VOLUME_DOWN
-  t3 (tap-hold-release 200 250 home end)
+  w3 (tap-hold-release 200 250 brup (macro brdn)) ;; LalaPad: mt_tap BRT_DEC BRT_INC
+  a3 (tap-hold-release 200 250 volu lmet)         ;; LalaPad: mt LCTRL C_VOLUME_UP → lmet
+  s3 (tap-hold-release 200 250 ret  lalt)         ;; LalaPad: mt LALT ENTER
+  z3 (tap-hold-release 200 250 vold lsft)         ;; LalaPad: mt LSHIFT C_VOLUME_DOWN
+  t3 (tap-hold-release 200 250 home (macro end))
   l3 (tap-hold-release 200 250 spc  ralt)
 
   ;; ════════════════════════════════════════════
