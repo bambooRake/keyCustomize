@@ -38,8 +38,13 @@
   ;; Lang1:  tap=かな, hold=Layer-3
   ;; space: tap=Space, hold=Layer-1
   spc1 (tap-hold-press 200 250 spc (layer-while-held L1))
-  eis2 (tap-hold-press 0 200 Lang2 (layer-while-held L2))
-  kan3 (tap-hold-press 0 200 Lang1  (layer-while-held L3))
+  ;; eis2: tap=英数 / 1tap-hold=L2 / 2tap-hold=L1 / 3tap-hold=L3
+  eis2 (tap-dance 300 (
+    (tap-hold-press 0 200 Lang2 (layer-while-held L2))
+    (layer-while-held L1)
+    (layer-while-held L3)
+  ))
+  kan3 (tap-hold-press 0 200 Lang1 (layer-while-held L3))
 
   ;; ════════════════════════════════════════════
   ;; Layer-0 (Default) — home-row mods
