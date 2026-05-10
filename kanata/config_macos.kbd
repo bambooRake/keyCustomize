@@ -46,26 +46,26 @@
   ;; ════════════════════════════════════════════
   ;; macOS modifiers: lctl=Control, lmet=Command(⌘), lalt=Option(⌥), lsft=Shift
   q0 (tap-hold-release 200 250 q (macro esc))   ;; 長押しでも esc は 1 回タップで固定
-  w0 (tap-hold-release 200 250 w lctl)   ;; LalaPad: mt LGUI W → lctl
+  w0 (tap-dance 300 ((tap-hold-release 200 250 w lctl) C-w))   ;; LalaPad: mt LGUI W → lctl / 2tap=Ctrl+w
   r0 (tap-hold-release 200 250 r (macro Lang1))  ;; hold=かな (1回タップ)
-  a0 (tap-hold-release 200 250 a lmet)           ;; LalaPad: mt LCTRL A → lmet
-  s0 (tap-hold-release 200 250 s lalt)
-  d0 (tap-hold-release 200 250 d (layer-while-held L2))  ;; LalaPad: lt 2 D
-  f0 (tap-hold-release 200 250 f (macro Lang2))  ;; hold=英数 (1回タップ)
-  z0 (tap-hold-release 200 250 z lsft)
+  a0 (tap-dance 300 ((tap-hold-release 200 250 a lmet) M-a))   ;; 2tap=Cmd+a
+  s0 (tap-dance 300 ((tap-hold-release 200 250 s lalt) A-s))   ;; 2tap=Opt+s
+  d0 (tap-hold-release 200 250 d (layer-while-held L2))         ;; LalaPad: lt 2 D
+  f0 (tap-hold-release 200 250 f (macro Lang2))                 ;; hold=英数 (1回タップ)
+  z0 (tap-dance 300 ((tap-hold-release 200 250 z lsft) S-z))   ;; 2tap=Shift+z
   c0 (tap-hold-release 200 500 c (macro caps))   ;; 500ms — 誤爆防止 / 1回タップ
 
   ;; ════════════════════════════════════════════
   ;; Layer-1 (Numbers & Symbols) — home-row mods
   ;; ════════════════════════════════════════════
   ;; LalaPad SECONDARY_LAYER 準拠
-  w1 (tap-hold-release 200 250 \  lctl)   ;; LalaPad: mt LWIN BACKSLASH → lctl
-  a1 (tap-hold-release 200 250 1  lmet)   ;; LalaPad: mt LCTRL N1 → lmet
-  s1 (tap-hold-release 200 250 2  lalt)
+  w1 (tap-dance 300 ((tap-hold-release 200 250 \  lctl) C-\))  ;; 2tap=Ctrl+\
+  a1 (tap-dance 300 ((tap-hold-release 200 250 1  lmet) M-1))  ;; 2tap=Cmd+1
+  s1 (tap-dance 300 ((tap-hold-release 200 250 2  lalt) A-2))  ;; 2tap=Opt+2
   d1 (tap-hold-release 200 250 3  (macro [))   ;; LalaPad: mt LEFT_BRACKET N3
   f1 (tap-hold-release 200 250 4  (macro ]))   ;; LalaPad: mt RIGHT_BRACKET N4
   g1 (tap-hold-release 200 250 5  (macro f5))
-  z1 (tap-hold-release 200 250 6  lsft)
+  z1 (tap-dance 300 ((tap-hold-release 200 250 6  lsft) S-6))  ;; 2tap=Shift+6
   x1 (tap-hold-release 200 250 7  (macro ,))   ;; LalaPad: mt_tap COMMA N7
   c1 (tap-hold-release 200 250 8  (macro .))   ;; LalaPad: mt_tap DOT N8
   v1 (tap-hold-release 200 250 9  (macro ;))
@@ -75,10 +75,10 @@
   ;; Layer-2 (Mouse & Navigation) — home-row mods + tap-dance
   ;; ════════════════════════════════════════════
   q2 (tap-hold-release 200 250 esc  (macro f13))  ;; LalaPad: mt_tap PRINTSCREEN ESCAPE (PrtSc は F13 代替)
-  w2 (tap-hold-release 200 250 .    lctl)         ;; LalaPad: mt LWIN PERIOD → lctl
-  a2 (tap-hold-release 200 250 -    lmet)         ;; LalaPad: mt LCTRL MINUS → lmet
-  s2 (tap-hold-release 200 250 ret  lalt)
-  z2 (tap-hold-release 200 250 ins  lsft)
+  w2 (tap-dance 300 ((tap-hold-release 200 250 .    lctl) C-.))   ;; 2tap=Ctrl+.
+  a2 (tap-dance 300 ((tap-hold-release 200 250 -    lmet) M--))   ;; 2tap=Cmd+-
+  s2 (tap-dance 300 ((tap-hold-release 200 250 ret  lalt) A-ret)) ;; 2tap=Opt+Return
+  z2 (tap-dance 300 ((tap-hold-release 200 250 ins  lsft) S-ins)) ;; 2tap=Shift+Insert
   y2 (tap-hold-release 200 250 home (macro end))
   l2 (tap-hold-release 200 250 ralt (macro ret))  ;; LalaPad: mt ENTER RIGHT_ALT (奇妙だが準拠)
   ;; wheel tap-dance — distance/interval は既存値 (75 / 2) を踏襲
@@ -92,23 +92,18 @@
   ;; LalaPad SYSTEM_LAYER の左手側準拠 (BT/reset 等は kanata で代替不可なので外し、
   ;; Mac で動く音量/明度のみ採用)。右手側は既存 kanata の L3 を維持 (deflayermap 参照)。
   w3 (tap-hold-release 200 250 brup (macro brdn)) ;; LalaPad: mt_tap BRT_DEC BRT_INC
-  a3 (tap-hold-release 200 250 volu lmet)         ;; LalaPad: mt LCTRL C_VOLUME_UP → lmet
-  s3 (tap-hold-release 200 250 ret  lalt)         ;; LalaPad: mt LALT ENTER
-  z3 (tap-hold-release 200 250 vold lsft)         ;; LalaPad: mt LSHIFT C_VOLUME_DOWN
+  a3 (tap-dance 300 ((tap-hold-release 200 250 volu lmet) M-volu)) ;; 2tap=Cmd+VolUp
+  s3 (tap-dance 300 ((tap-hold-release 200 250 ret  lalt) A-ret))  ;; 2tap=Opt+Return
+  z3 (tap-dance 300 ((tap-hold-release 200 250 vold lsft) S-vold)) ;; 2tap=Shift+VolDown
   t3 (tap-hold-release 200 250 home (macro end))
-  l3 (tap-hold-release 200 250 spc  ralt)
+  l3 (tap-dance 300 ((tap-hold-release 200 250 spc  ralt) RA-spc)) ;; 2tap=RightOpt+Space
 
   ;; ════════════════════════════════════════════
-  ;; Tap-dance 版 (opt-in)
+  ;; Note: 修飾系 home-row mods は tap-dance で実装済み
   ;; ════════════════════════════════════════════
-  ;; 安定動作確認後、上の tap-hold-release を以下に差し替え可能
-  ;; 1tap = tap-hold, 2tap = modifier+key (例: 2tap z = Shift+Z)
-  ;; ※ tap-dance timeout 分 (120ms) の入力遅延が全キーに発生する
-  ;;
-  ;; w0-td (tap-dance 120 ((tap-hold-release 200 250 w lctl) C-w))
-  ;; a0-td (tap-dance 120 ((tap-hold-release 200 250 a lmet) M-a))
-  ;; s0-td (tap-dance 120 ((tap-hold-release 200 250 s lalt) A-s))
-  ;; z0-td (tap-dance 120 ((tap-hold-release 200 250 z lsft) S-z))
+  ;; 1tap = tap-hold-release (tap=文字 / hold=修飾キー)
+  ;; 2tap = 修飾キー + 同キー  (例: 2tap z = Shift+z)
+  ;; ※ tap-dance timeout (300ms) 分の入力遅延が修飾系キーに発生
 
   ;; ════════════════════════════════════════════
   ;; Combos (LalaPad → kanata 試験移植)
