@@ -156,12 +156,14 @@
 ;; ════════════════════════════════════════════
 ;; Combos (defchordsv2 / 試験移植)
 ;; ════════════════════════════════════════════
-;; LalaPad の COMBO_TAB_ALT を移植。Mac では英数(Lang2) + t の同時押しで発火。
+;; LalaPad の COMBO_TAB_ALT を移植。Mac では英数(Lang2) / 無変換(muhenkan) / 変換(henkan) + t の同時押しで発火。
 ;; defchordsv2 は全レイヤー横断で評価され、かつ tap-hold の遅延フローを通らない
 ;; (chord-action 直行) ため副作用が出やすい。
 ;; 不調なら下記ブロックごと削除すること。base 以外では無効化済み。
 (defchordsv2
-  (Lang2 t) @et_co 100 all-released (L1 L2 L3)
+  (Lang2    t) @et_co 100 all-released (L1 L2 L3)
+  (muhenkan t) @et_co 100 all-released (L1 L2 L3)
+  (henkan   t) @et_co 100 all-released (L1 L2 L3)
 )
 
 ;; ── Base layer (Layer-0) ──
@@ -175,9 +177,11 @@
   f     @f0
   z     @z0
   c     @c0
-  spc   @spc1
-  Lang2 @eis2
-  Lang1 @kan3
+  spc      @spc1
+  Lang2    @eis2
+  muhenkan @eis2   ;; PC キーボードの無変換キーも 英数(Lang2) と同等扱い
+  henkan   @eis2   ;; PC キーボードの変換キーも   英数(Lang2) と同等扱い
+  Lang1    @kan3
 )
 
 ;; ── Layer-1: Numbers & Symbols (LalaPad SECONDARY_LAYER 準拠) ──
@@ -242,7 +246,9 @@
   . del
   / rsft
   ;; その他
-  Lang2 spc                 ;; L2 では 英数(Lang2) → Space に変換
+  Lang2    spc              ;; L2 では 英数(Lang2)      → Space に変換
+  muhenkan spc              ;; L2 では 無変換(muhenkan) → Space に変換
+  henkan   spc              ;; L2 では 変換(henkan)     → Space に変換
 )
 
 ;; ── Layer-3: System (左手=LalaPad SYSTEM 準拠) ──
