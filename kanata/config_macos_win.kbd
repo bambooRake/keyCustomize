@@ -1,0 +1,274 @@
+;; Kanata macOS config — migrated from Karabiner complex_modifications
+;; 2026-05-10: LalaPadGen2 (ZMK) のキーマップ準拠に再構成
+;;   元: /Users/mbamb/0_git/zmk-config-LalaPadGen2/config/lalapadgen2.keymap
+;;   読み替え: ZMK の LGUI → kanata の lctl、LCTRL → kanata の lmet
+;;             (Mac 慣習として A=⌘, W=⌃ を維持)
+;;   wheel の数値 (75/2) は既存値を踏襲
+;;   sticky_mod の 300ms 余韻は (one-shot 300 …) で再現 (2026-05-13)
+;;
+;; Prerequisites:
+;;   1. Karabiner DriverKit VirtualHIDDevice がインストール済み
+;;      (Karabiner-Elements をインストール済みなら OK)
+;;   2. Apple 内蔵キーボードの修飾キー入替:
+;;      System Settings > Keyboard > Keyboard Shortcuts > Modifier Keys で設定
+;;   3. Parallels の Ctrl/Cmd 入替:
+;;      Parallels > Preferences > Shortcuts で設定
+;;      (Kanata にはアプリ別条件分岐がないため)
+;;
+;; Run:
+;;   kanata --check -c ~/.config/kanata/config_macos.kbd
+;;   kanata -c ~/.config/kanata/config_macos.kbd
+;;
+;; Tap-Hold 方式: tap-hold (timeout のみで判定 / ZMK "timeout" 方式)
+;;   - timeout 内に離す → tap 発動 (文字出力) ※他キー押下は無視
+;;   - timeout 経過まで押しっぱなし → hold 発動 (modifier / layer)
+;;   ※ 誤発動が増えるなら tap-hold-release (ZMK "balanced" 相当) に戻す
+;;     (他キーを押して離す→hold、先にこのキーを離す→tap)
+
+(defcfg
+  process-unmapped-keys yes
+  concurrent-tap-hold yes   ;; defchordsv2 利用に必須
+)
+
+;; ════════════════════════════════════════════
+;; Virtual keys — LalaPad 風 sticky modifier 用
+;; ════════════════════════════════════════════
+;; vk-<mod>  : 修飾キーそのもの (press-vkey すると修飾キー押下、release-vkey すると解放)
+;; dr-<mod>  : "delayed release" 用 macro vkey — タップすると 300ms 待って vk-<mod> を解放
+(defvirtualkeys
+  vk-lctl lctl
+  vk-lmet lmet
+  vk-lalt lalt
+  vk-lsft lsft
+  vk-ralt ralt
+  dr-lctl (macro 300 (on-press release-vkey vk-lctl))
+  dr-lmet (macro 300 (on-press release-vkey vk-lmet))
+  dr-lalt (macro 300 (on-press release-vkey vk-lalt))
+  dr-lsft (macro 300 (on-press release-vkey vk-lsft))
+  dr-ralt (macro 300 (on-press release-vkey vk-ralt))
+)
+
+(defalias
+  ;; ════════════════════════════════════════════
+  ;; sticky modifier helpers (LalaPad 風 300ms 余韻)
+  ;; ════════════════════════════════════════════
+  ;; tap-hold の hold アクションに渡すと:
+  ;;   - hold engage 時: press-vkey で vk-<mod> を押下 (= 修飾キー押下)
+  ;;   - host key release 時: dr-<mod> をタップ → 300ms 待って vk-<mod> を解放
+  ;; press-vkey は明示的 release があるまで保持されるため、tap-hold lifecycle と切り離せる。
+  sm-lctl (multi (on-press press-vkey vk-lctl) (on-release tap-vkey dr-lctl))
+  sm-lmet (multi (on-press press-vkey vk-lmet) (on-release tap-vkey dr-lmet))
+  sm-lalt (multi (on-press press-vkey vk-lalt) (on-release tap-vkey dr-lalt))
+  sm-lsft (multi (on-press press-vkey vk-lsft) (on-release tap-vkey dr-lsft))
+  sm-ralt (multi (on-press press-vkey vk-ralt) (on-release tap-vkey dr-ralt))
+
+  ;; ════════════════════════════════════════════
+  ;; Layer triggers
+  ;; ════════════════════════════════════════════
+  ;; muhenkan: tap=英数, hold=Layer-2
+  ;; henkan:  tap=かな, hold=Layer-3
+  ;; space:   tap=(無キー) / 1tap-hold=L2 / 2tap-hold=L1 / 3tap-hold=L3
+  spc1 (tap-dance 220 (
+    (tap-hold-press 0 200 XX (layer-while-held L2))
+    (layer-while-held L1)
+    (layer-while-held L3)
+  ))
+  ;; eis2: tap=英数 / 1tap-hold=L2 / 2tap-hold=L1 / 3tap-hold=L3
+  eis2 (tap-dance 220 (
+    (tap-hold-press 0 200 muhenkan (layer-while-held L2))
+    (layer-while-held L1)
+    (layer-while-held L3)
+  ))
+  kan3 (tap-hold-press 0 200 henkan (layer-while-held L3))
+
+  ;; ════════════════════════════════════════════
+  ;; Layer-0 (Default) — home-row mods
+  ;; ════════════════════════════════════════════
+  ;; Windows modifiers (Mac→Win 読み替え: Cmd→Ctrl, Ctrl→Win):
+  ;;   lctl=Ctrl(Mac ⌘ 相当), lmet=Win(Mac ⌃ 相当), lalt=Alt(Option), lsft=Shift
+  q0 (tap-hold 0 200 q (macro esc))   ;; 長押しでも esc は 1 回タップで固定
+  w0 (tap-hold 0 200 w @sm-lmet)   ;; Win版: hold=Win key (Mac Ctrl 位置 → Win)
+  r0 (tap-hold 0 200 r (macro henkan))  ;; hold=かな (1回タップ)
+  a0 (tap-hold 0 200 a @sm-lctl)   ;; Win版: hold=Ctrl (Mac Cmd 位置 → Ctrl)
+  s0 (tap-hold 0 200 s @sm-lalt)   ;; LalaPad: hold=lalt + 300ms 余韻
+  d0 (tap-hold 0 200 d (layer-while-held L2))         ;; LalaPad: lt 2 D
+  f0 (tap-hold 0 200 f (macro muhenkan))                 ;; hold=英数 (1回タップ)
+  z0 (tap-hold 0 200 z @sm-lsft)   ;; LalaPad: hold=lsft + 300ms 余韻
+  c0 (tap-hold 0 500 c (macro caps))   ;; 500ms — 誤爆防止 / 1回タップ
+
+  ;; ════════════════════════════════════════════
+  ;; Layer-1 (Numbers & Symbols) — home-row mods
+  ;; ════════════════════════════════════════════
+  ;; LalaPad SECONDARY_LAYER 準拠
+  w1 (tap-hold 0 200 \  @sm-lmet)  ;; Win版: hold=Win key
+  a1 (tap-hold 0 200 1  @sm-lctl)  ;; Win版: hold=Ctrl
+  s1 (tap-hold 0 200 2  @sm-lalt)  ;; LalaPad: hold=lalt + 300ms 余韻
+  d1 (tap-hold 0 200 3  (macro [))   ;; LalaPad: mt LEFT_BRACKET N3
+  f1 (tap-hold 0 200 4  (macro ]))   ;; LalaPad: mt RIGHT_BRACKET N4
+  g1 (tap-hold 0 200 5  (macro f5))
+  z1 (tap-hold 0 200 6  @sm-lsft)  ;; LalaPad: hold=lsft + 300ms 余韻
+  x1 (tap-hold 0 200 7  (macro ,))   ;; LalaPad: mt_tap COMMA N7
+  c1 (tap-hold 0 200 8  (macro .))   ;; LalaPad: mt_tap DOT N8
+  v1 (tap-hold 0 200 9  (macro ;))
+  b1 (tap-hold 0 200 0  (macro \))
+
+  ;; ════════════════════════════════════════════
+  ;; Layer-2 (Mouse & Navigation) — home-row mods + tap-dance
+  ;; ════════════════════════════════════════════
+  q2 (tap-hold 0 200 esc  (macro f13))  ;; LalaPad: mt_tap PRINTSCREEN ESCAPE (PrtSc は F13 代替)
+  w2 (tap-hold 0 200 .    @sm-lmet)   ;; Win版: hold=Win key
+  a2 (tap-hold 0 200 -    @sm-lctl)   ;; Win版: hold=Ctrl
+  s2 (tap-hold 0 200 ret  @sm-lalt)   ;; LalaPad: hold=lalt + 300ms 余韻
+  z2 (tap-hold 0 200 ins  @sm-lsft)   ;; LalaPad: hold=lsft + 300ms 余韻
+  y2 (tap-hold 0 200 home (macro end))
+  l2 (tap-hold 0 200 ralt (macro ret))  ;; LalaPad: mt ENTER RIGHT_ALT (奇妙だが準拠)
+  ;; wheel tap-dance — distance/interval は既存値 (75 / 2) を踏襲
+  se2 (tap-dance 220 ((mwheel-up   75 2) (mwheel-left  75 2)))  ;; LalaPad: tp_msc_up_left
+  sd2 (tap-dance 220 ((mwheel-down 75 2) (mwheel-right 75 2)))  ;; LalaPad: tp_msc_down_right
+  mr2 (tap-dance 220 (mbck mfwd))                               ;; LalaPad: tp_mkp_mb4_mb5
+
+  ;; ════════════════════════════════════════════
+  ;; Layer-3 (System: 左手) — home-row mods
+  ;; ════════════════════════════════════════════
+  ;; LalaPad SYSTEM_LAYER の左手側準拠 (BT/reset 等は kanata で代替不可なので外し、
+  ;; Mac で動く音量/明度のみ採用)。右手側は既存 kanata の L3 を維持 (deflayermap 参照)。
+  w3 (tap-hold 0 200 brup (macro brdn)) ;; LalaPad: mt_tap BRT_DEC BRT_INC
+  a3 (tap-hold 0 200 volu @sm-lctl) ;; Win版: hold=Ctrl
+  s3 (tap-hold 0 200 ret  @sm-lalt) ;; LalaPad: hold=lalt + 300ms 余韻
+  z3 (tap-hold 0 200 vold @sm-lsft) ;; LalaPad: hold=lsft + 300ms 余韻
+  t3 (tap-hold 0 200 home (macro end))
+  l3 (tap-hold 0 200 spc  @sm-ralt) ;; LalaPad: hold=ralt + 300ms 余韻
+
+  ;; ════════════════════════════════════════════
+  ;; Note: 修飾系 home-row mods は tap-hold + one-shot で実装
+  ;; ════════════════════════════════════════════
+  ;; tap = 文字 / hold = 修飾キー (+ リリース後 300ms 余韻)
+  ;;   → ホールド離した直後に次のキーを叩けば修飾が乗る (LalaPad sticky_mod 相当)
+  ;;   → 300ms 内に別キーが押されなければ静かに修飾解除
+  ;; ※ 旧 tap-dance 方式 (2tap=修飾+同キー) は撤去
+  ;;   → tap-dance timeout (220ms) 分の入力遅延も解消
+
+  ;; ════════════════════════════════════════════
+  ;; Combos (LalaPad → kanata 試験移植)
+  ;; ════════════════════════════════════════════
+  ;; eisuu(muhenkan) + t 同時押し → "L2 + LEFT_ALT"
+  ;; (LalaPad の COMBO_TAB_ALT 相当を Mac の英数キー側で再現)
+  et_co (multi (layer-while-held L2) lalt)
+)
+
+(defsrc)
+
+;; ════════════════════════════════════════════
+;; Combos (defchordsv2 / 試験移植)
+;; ════════════════════════════════════════════
+;; LalaPad の COMBO_TAB_ALT を移植。Mac では英数(muhenkan) / 無変換(muhenkan) / 変換(henkan) + t の同時押しで発火。
+;; defchordsv2 は全レイヤー横断で評価され、かつ tap-hold の遅延フローを通らない
+;; (chord-action 直行) ため副作用が出やすい。
+;; 不調なら下記ブロックごと削除すること。base 以外では無効化済み。
+(defchordsv2
+  (muhenkan t) @et_co 100 all-released (L1 L2 L3)
+  (henkan   t) @et_co 100 all-released (L1 L2 L3)
+)
+
+;; ── Base layer (Layer-0) ──
+(deflayermap (base)
+  q     @q0
+  w     @w0
+  r     @r0
+  a     @a0
+  s     @s0
+  d     @d0          ;; LalaPad: lt 2 D — tap=d, hold=L2
+  f     @f0
+  z     @z0
+  c     @c0
+  spc      @spc1
+  muhenkan @eis2
+  henkan   @kan3
+)
+
+;; ── Layer-1: Numbers & Symbols (LalaPad SECONDARY_LAYER 準拠) ──
+(deflayermap (L1)
+  q /
+  w @w1
+  e -
+  r '
+  t =
+  y f1    u f2    i f3    o f4    p f5
+  a @a1
+  s @s1
+  d @d1
+  f @f1
+  g @g1
+  h f6    j f7    k f8    l f9    ; f10
+  z @z1
+  x @x1
+  c @c1
+  v @v1
+  b @b1
+  n f11   m f12
+  , [     . ]     / \
+)
+
+;; ── Layer-2: Mouse & Navigation (LalaPad TERTIARY_LAYER 準拠) ──
+(deflayermap (L2)
+  ;; 左手上段
+  q @q2                     ;; tap=Esc, hold=F13 (PrtSc 代替)
+  w @w2                     ;; tap=., hold=Win (Mac Ctrl→Win)
+  e @se2                    ;; tap-dance: scroll-up / dbl-tap=scroll-left
+  r @mr2                    ;; tap-dance: mb4 / dbl-tap=mb5
+  t tab                     ;; LalaPad: kp TAB
+  ;; 右手上段
+  y @y2                     ;; tap=Home, hold=End
+  u up
+  i tab
+  o rctl                    ;; Win版: Right Ctrl (Mac RCmd→RCtrl)
+  p esc
+  ;; 左手中段
+  a @a2                     ;; tap=-, hold=Ctrl (Mac Cmd→Ctrl)
+  s @s2                     ;; tap=Return, hold=lalt
+  d @sd2                    ;; tap-dance: scroll-down / dbl-tap=scroll-right
+  f mlft                    ;; LalaPad: mkp MB1
+  g mmid                    ;; LalaPad: mkp MB3
+  ;; 右手中段 (Vim-style nav)
+  h left
+  j down
+  k rght
+  l @l2                     ;; tap=RightOption, hold=Return
+  ; rmet                    ;; Win版: Right Win (Mac RCtrl→RWin)
+  ;; 左手下段
+  z @z2                     ;; tap=Insert, hold=lsft
+  x bspc                    ;; LalaPad: kp BACKSPACE
+  c spc                     ;; LalaPad: kp SPACE
+  v mrgt                    ;; LalaPad: mkp MB2
+  b del
+  ;; 右手下段
+  n bspc                    ;; LalaPad: kp BACKSPACE
+  m pgdn
+  , pgup
+  . del
+  / rsft
+  ;; その他
+  spc      spc              ;; L2 でも Space は Space (spc1 hold 中の連打用)
+  muhenkan spc              ;; L2 では 無変換(muhenkan) → Space に変換
+  henkan   spc              ;; L2 では 変換(henkan)     → Space に変換
+)
+
+;; ── Layer-3: System (左手=LalaPad SYSTEM 準拠) ──
+(deflayermap (L3)
+  ;; 左手 — LalaPad SYSTEM_LAYER 準拠 (Mac で動かない BT/reset/zoom 系は外す)
+  q mute                    ;; LalaPad: kp C_MUTE
+  w @w3                     ;; tap=brup, hold=brdn
+  e XX                      ;; LalaPad: K_CONTEXT_MENU — Mac 代替なしのため無効化
+  r up                      ;; LalaPad: kp UP_ARROW
+  t @t3                     ;; tap=Home, hold=End
+  a @a3                     ;; tap=VolUp, hold=Ctrl (Mac Cmd→Ctrl)
+  s @s3                     ;; tap=Return, hold=lalt
+  d left                    ;; LalaPad: kp LEFT_ARROW
+  f down                    ;; LalaPad: kp DOWN_ARROW
+  g rght                    ;; LalaPad: kp RIGHT_ARROW
+  z @z3                     ;; tap=VolDown, hold=lsft
+  x bspc                    ;; LalaPad: kp BACKSPACE
+  c pgup                    ;; LalaPad: kp PAGE_UP (注: 元の System layer は元々 trans)
+  v pgdn
+  b del
+)
