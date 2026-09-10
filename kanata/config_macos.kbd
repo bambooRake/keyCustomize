@@ -28,6 +28,15 @@
 (defcfg
   process-unmapped-keys yes
   concurrent-tap-hold yes   ;; defchordsv2 利用に必須
+
+  ;; kanata は内蔵キーボードだけに適用する。
+  ;;   - LalaPad は ZMK ファーム + Karabiner(変換/無変換→かな/英数) が担当するので kanata は触らない
+  ;;     → LalaPad 内蔵マウス(&mkp/カーソル)を kanata が grab しなくなり、クリック競合が解消
+  ;;   - 他キーボードを kanata 対象にしたくなったら、この include に名前を追記する
+  ;;   - デバイス名は `sudo kanata-osx-fork --list` / ioreg の Product 名で確認
+  macos-dev-names-include (
+    "Apple Internal Keyboard / Trackpad"
+  )
 )
 
 ;; ════════════════════════════════════════════
@@ -179,9 +188,14 @@
   c     @c0
   spc      @spc1
   Lang2    @eis2
-  muhenkan @eis2   ;; PC キーボードの無変換キーも 英数(Lang2) と同等扱い
-  henkan   @eis2   ;; PC キーボードの変換キーも   英数(Lang2) と同等扱い
+  muhenkan @eis2   ;; F長押し(無変換=INT5) → 英数(Lang2)
+  henkan   @kan3   ;; R長押し(変換=INT4)   → かな(Lang1)  ※以前は @eis2 で英数に潰れていた
   Lang1    @kan3
+  ;; Apple 内蔵キーボードの Fn(globe) を L2 modifier として使う。
+  ;; macOS の Fn-row → media-key 変換は kanata が内蔵 KB を grab した時点で失われるため、
+  ;; kanata 側で Fn+F1..F12 → consumer key (page 0x0C) を直接 emit して復元する。
+  ;; 参照: GitHub jtroo/kanata issue #975 / #1141 / discussion #686
+  fn    (layer-while-held L2)
 )
 
 ;; ── Layer-1: Numbers & Symbols (LalaPad SECONDARY_LAYER 準拠) ──
@@ -249,6 +263,21 @@
   Lang2    spc              ;; L2 では 英数(Lang2)      → Space に変換
   muhenkan spc              ;; L2 では 無変換(muhenkan) → Space に変換
   henkan   spc              ;; L2 では 変換(henkan)     → Space に変換
+  ;; Fn(globe) hold + F-row → media keys (consumer page 0x0C を直接 emit)
+  ;; macOS 標準の "Use F1, F2... as standard function keys" ON 時相当の挙動を kanata で再現
+  f1  brdn                  ;; Fn+F1  → Brightness Down
+  f2  brup                  ;; Fn+F2  → Brightness Up
+  f3  mctl                  ;; Fn+F3  → Mission Control (consumer 0x0C/0x29F)
+  f4  sls                   ;; Fn+F4  → Spotlight Search (consumer 0x0C/0x221)
+                            ;;          旧 MacBook 風の Launchpad にするなら lpad に変更
+  f5  dtn                   ;; Fn+F5  → Dictation 🎤      (consumer 0x0C/0xCF)
+  f6  dnd                   ;; Fn+F6  → Do Not Disturb 🌙 (generic-desktop 0x01/0x9B)
+  f7  prev                  ;; Fn+F7  → Media Previous
+  f8  pp                    ;; Fn+F8  → Media Play/Pause
+  f9  next                  ;; Fn+F9  → Media Next
+  f10 mute                  ;; Fn+F10 → Mute
+  f11 vold                  ;; Fn+F11 → Volume Down
+  f12 volu                  ;; Fn+F12 → Volume Up
 )
 
 ;; ── Layer-3: System (左手=LalaPad SYSTEM 準拠) ──
