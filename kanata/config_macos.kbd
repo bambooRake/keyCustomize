@@ -4,7 +4,7 @@
 ;;   読み替え: ZMK の LGUI → kanata の lctl、LCTRL → kanata の lmet
 ;;             (Mac 慣習として A=⌘, W=⌃ を維持)
 ;;   wheel の数値 (75/2) は既存値を踏襲
-;;   sticky_mod の 300ms 余韻は (one-shot 300 …) で再現 (2026-05-13)
+;;   sticky_mod の 180ms 余韻は delayed-release macro で再現
 ;;
 ;; Prerequisites:
 ;;   1. Karabiner DriverKit VirtualHIDDevice がインストール済み
@@ -43,27 +43,27 @@
 ;; Virtual keys — LalaPad 風 sticky modifier 用
 ;; ════════════════════════════════════════════
 ;; vk-<mod>  : 修飾キーそのもの (press-vkey すると修飾キー押下、release-vkey すると解放)
-;; dr-<mod>  : "delayed release" 用 macro vkey — タップすると 300ms 待って vk-<mod> を解放
+;; dr-<mod>  : "delayed release" 用 macro vkey — タップすると 180ms 待って vk-<mod> を解放
 (defvirtualkeys
   vk-lctl lctl
   vk-lmet lmet
   vk-lalt lalt
   vk-lsft lsft
   vk-ralt ralt
-  dr-lctl (macro 300 (on-press release-vkey vk-lctl))
-  dr-lmet (macro 300 (on-press release-vkey vk-lmet))
-  dr-lalt (macro 300 (on-press release-vkey vk-lalt))
-  dr-lsft (macro 300 (on-press release-vkey vk-lsft))
-  dr-ralt (macro 300 (on-press release-vkey vk-ralt))
+  dr-lctl (macro 180 (on-press release-vkey vk-lctl))
+  dr-lmet (macro 180 (on-press release-vkey vk-lmet))
+  dr-lalt (macro 180 (on-press release-vkey vk-lalt))
+  dr-lsft (macro 180 (on-press release-vkey vk-lsft))
+  dr-ralt (macro 180 (on-press release-vkey vk-ralt))
 )
 
 (defalias
   ;; ════════════════════════════════════════════
-  ;; sticky modifier helpers (LalaPad 風 300ms 余韻)
+  ;; sticky modifier helpers (LalaPad 風 180ms 余韻)
   ;; ════════════════════════════════════════════
   ;; tap-hold の hold アクションに渡すと:
   ;;   - hold engage 時: press-vkey で vk-<mod> を押下 (= 修飾キー押下)
-  ;;   - host key release 時: dr-<mod> をタップ → 300ms 待って vk-<mod> を解放
+  ;;   - host key release 時: dr-<mod> をタップ → 180ms 待って vk-<mod> を解放
   ;; press-vkey は明示的 release があるまで保持されるため、tap-hold lifecycle と切り離せる。
   sm-lctl (multi (on-press press-vkey vk-lctl) (on-release tap-vkey dr-lctl))
   sm-lmet (multi (on-press press-vkey vk-lmet) (on-release tap-vkey dr-lmet))
@@ -94,26 +94,26 @@
   ;; ════════════════════════════════════════════
   ;; macOS modifiers: lctl=Control, lmet=Command(⌘), lalt=Option(⌥), lsft=Shift
   q0 (tap-hold 0 200 q (macro esc))   ;; 長押しでも esc は 1 回タップで固定
-  w0 (tap-hold 0 200 w @sm-lctl)   ;; LalaPad: hold=lctl + 300ms 余韻
+  w0 (tap-hold 0 200 w @sm-lctl)   ;; LalaPad: hold=lctl + 180ms 余韻
   r0 (tap-hold 0 200 r (macro Lang1))  ;; hold=かな (1回タップ)
-  a0 (tap-hold 0 200 a @sm-lmet)   ;; LalaPad: hold=lmet + 300ms 余韻
-  s0 (tap-hold 0 200 s @sm-lalt)   ;; LalaPad: hold=lalt + 300ms 余韻
+  a0 (tap-hold 0 200 a @sm-lmet)   ;; LalaPad: hold=lmet + 180ms 余韻
+  s0 (tap-hold 0 200 s @sm-lalt)   ;; LalaPad: hold=lalt + 180ms 余韻
   d0 (tap-hold 0 200 d (layer-while-held L2))         ;; LalaPad: lt 2 D
   f0 (tap-hold 0 200 f (macro Lang2))                 ;; hold=英数 (1回タップ)
-  z0 (tap-hold 0 200 z @sm-lsft)   ;; LalaPad: hold=lsft + 300ms 余韻
+  z0 (tap-hold 0 200 z @sm-lsft)   ;; LalaPad: hold=lsft + 180ms 余韻
   c0 (tap-hold 0 500 c (macro caps))   ;; 500ms — 誤爆防止 / 1回タップ
 
   ;; ════════════════════════════════════════════
   ;; Layer-1 (Numbers & Symbols) — home-row mods
   ;; ════════════════════════════════════════════
   ;; LalaPad SECONDARY_LAYER 準拠
-  w1 (tap-hold 0 200 \  @sm-lctl)  ;; LalaPad: hold=lctl + 300ms 余韻
-  a1 (tap-hold 0 200 1  @sm-lmet)  ;; LalaPad: hold=lmet + 300ms 余韻
-  s1 (tap-hold 0 200 2  @sm-lalt)  ;; LalaPad: hold=lalt + 300ms 余韻
+  w1 (tap-hold 0 200 \  @sm-lctl)  ;; LalaPad: hold=lctl + 180ms 余韻
+  a1 (tap-hold 0 200 1  @sm-lmet)  ;; LalaPad: hold=lmet + 180ms 余韻
+  s1 (tap-hold 0 200 2  @sm-lalt)  ;; LalaPad: hold=lalt + 180ms 余韻
   d1 (tap-hold 0 200 3  (macro [))   ;; LalaPad: mt LEFT_BRACKET N3
   f1 (tap-hold 0 200 4  (macro ]))   ;; LalaPad: mt RIGHT_BRACKET N4
   g1 (tap-hold 0 200 5  (macro f5))
-  z1 (tap-hold 0 200 6  @sm-lsft)  ;; LalaPad: hold=lsft + 300ms 余韻
+  z1 (tap-hold 0 200 6  @sm-lsft)  ;; LalaPad: hold=lsft + 180ms 余韻
   x1 (tap-hold 0 200 7  (macro ,))   ;; LalaPad: mt_tap COMMA N7
   c1 (tap-hold 0 200 8  (macro .))   ;; LalaPad: mt_tap DOT N8
   v1 (tap-hold 0 200 9  (macro ;))
@@ -123,10 +123,10 @@
   ;; Layer-2 (Mouse & Navigation) — home-row mods + tap-dance
   ;; ════════════════════════════════════════════
   q2 (tap-hold 0 200 esc  (macro f13))  ;; LalaPad: mt_tap PRINTSCREEN ESCAPE (PrtSc は F13 代替)
-  w2 (tap-hold 0 200 .    @sm-lctl)   ;; LalaPad: hold=lctl + 300ms 余韻
-  a2 (tap-hold 0 200 -    @sm-lmet)   ;; LalaPad: hold=lmet + 300ms 余韻
-  s2 (tap-hold 0 200 ret  @sm-lalt)   ;; LalaPad: hold=lalt + 300ms 余韻
-  z2 (tap-hold 0 200 ins  @sm-lsft)   ;; LalaPad: hold=lsft + 300ms 余韻
+  w2 (tap-hold 0 200 .    @sm-lctl)   ;; LalaPad: hold=lctl + 180ms 余韻
+  a2 (tap-hold 0 200 -    @sm-lmet)   ;; LalaPad: hold=lmet + 180ms 余韻
+  s2 (tap-hold 0 200 ret  @sm-lalt)   ;; LalaPad: hold=lalt + 180ms 余韻
+  z2 (tap-hold 0 200 ins  @sm-lsft)   ;; LalaPad: hold=lsft + 180ms 余韻
   y2 (tap-hold 0 200 home (macro end))
   l2 (tap-hold 0 200 ralt (macro ret))  ;; LalaPad: mt ENTER RIGHT_ALT (奇妙だが準拠)
   ;; wheel tap-dance — distance/interval は既存値 (75 / 2) を踏襲
@@ -140,18 +140,18 @@
   ;; LalaPad SYSTEM_LAYER の左手側準拠 (BT/reset 等は kanata で代替不可なので外し、
   ;; Mac で動く音量/明度のみ採用)。右手側は既存 kanata の L3 を維持 (deflayermap 参照)。
   w3 (tap-hold 0 200 brup (macro brdn)) ;; LalaPad: mt_tap BRT_DEC BRT_INC
-  a3 (tap-hold 0 200 volu @sm-lmet) ;; LalaPad: hold=lmet + 300ms 余韻
-  s3 (tap-hold 0 200 ret  @sm-lalt) ;; LalaPad: hold=lalt + 300ms 余韻
-  z3 (tap-hold 0 200 vold @sm-lsft) ;; LalaPad: hold=lsft + 300ms 余韻
+  a3 (tap-hold 0 200 volu @sm-lmet) ;; LalaPad: hold=lmet + 180ms 余韻
+  s3 (tap-hold 0 200 ret  @sm-lalt) ;; LalaPad: hold=lalt + 180ms 余韻
+  z3 (tap-hold 0 200 vold @sm-lsft) ;; LalaPad: hold=lsft + 180ms 余韻
   t3 (tap-hold 0 200 home (macro end))
-  l3 (tap-hold 0 200 spc  @sm-ralt) ;; LalaPad: hold=ralt + 300ms 余韻
+  l3 (tap-hold 0 200 spc  @sm-ralt) ;; LalaPad: hold=ralt + 180ms 余韻
 
   ;; ════════════════════════════════════════════
   ;; Note: 修飾系 home-row mods は tap-hold + one-shot で実装
   ;; ════════════════════════════════════════════
-  ;; tap = 文字 / hold = 修飾キー (+ リリース後 300ms 余韻)
+  ;; tap = 文字 / hold = 修飾キー (+ リリース後 180ms 余韻)
   ;;   → ホールド離した直後に次のキーを叩けば修飾が乗る (LalaPad sticky_mod 相当)
-  ;;   → 300ms 内に別キーが押されなければ静かに修飾解除
+  ;;   → 180ms 内に別キーが押されなければ静かに修飾解除
   ;; ※ 旧 tap-dance 方式 (2tap=修飾+同キー) は撤去
   ;;   → tap-dance timeout (220ms) 分の入力遅延も解消
 
