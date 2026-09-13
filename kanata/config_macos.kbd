@@ -76,8 +76,11 @@
   ;; ════════════════════════════════════════════
   ;; Lang2: tap=英数, hold=Layer-2
   ;; Lang1:  tap=かな, hold=Layer-3
-  ;; space: tap=Space, hold=Layer-1
-  spc1 (tap-hold-press 0 200 spc (layer-while-held L1))
+  ;; space: tap=Space / 1tap-hold=L1 / 2tap-hold=Space押しっぱ
+  spc1 (tap-dance 220 (
+    (tap-hold-press 0 200 spc (layer-while-held L1))
+    spc
+  ))
   ;; eis2: tap=英数 / 1tap-hold=L2 / 2tap-hold=L1 / 3tap-hold=L3
   eis2 (tap-dance 220 (
     (tap-hold-press 0 200 Lang2 (layer-while-held L2))
@@ -196,6 +199,8 @@
   ;; kanata 側で Fn+F1..F12 → consumer key (page 0x0C) を直接 emit して復元する。
   ;; 参照: GitHub jtroo/kanata issue #975 / #1141 / discussion #686
   fn    (layer-while-held L2)
+  ;; JIS「ろ」(international1): ANSI 認識だと無反応なので US の `/~ に割当
+  ro    grv
 )
 
 ;; ── Layer-1: Numbers & Symbols (LalaPad SECONDARY_LAYER 準拠) ──
