@@ -91,7 +91,9 @@
   r0 (tap-hold 0 200 r (macro henkan))  ;; hold=かな (1回タップ)
   a0 (tap-hold 0 200 a @sm-lctl)   ;; Win版: hold=Ctrl (Mac Cmd 位置 → Ctrl)
   s0 (tap-hold 0 200 s @sm-lalt)   ;; LalaPad: hold=lalt + 300ms 余韻
-  d0 (tap-hold 0 200 d (layer-while-held L2))         ;; LalaPad: lt 2 D
+  at-f (multi (on-press press-vkey vk-lalt) (macro (on-press press-vkey vk-lalt) 15 tab))     ;; 先にAlt押下 → 15ms後にTabをタップ
+  at-s (multi (on-press press-vkey vk-lalt) (macro (on-press press-vkey vk-lalt) 15 S-tab))   ;; 先にAlt押下 → 15ms後にShift+Tabをタップ
+  to-combo4 (multi (layer-while-held 4combo) (on-release release-vkey vk-lalt)) ;; コンボ中4comboレイヤーを維持し離下時にAlt解放
   f0 (tap-hold 0 200 f (macro muhenkan))                 ;; hold=英数 (1回タップ)
   z0 (tap-hold 0 200 z @sm-lsft)   ;; LalaPad: hold=lsft + 300ms 余韻
   c0 (tap-hold 0 500 c (macro caps))   ;; 500ms — 誤爆防止 / 1回タップ
@@ -166,8 +168,10 @@
 ;; (chord-action 直行) ため副作用が出やすい。
 ;; 不調なら下記ブロックごと削除すること。base 以外では無効化済み。
 (defchordsv2
-  (muhenkan t) @et_co 100 all-released (L1 L2 L3)
-  (henkan   t) @et_co 100 all-released (L1 L2 L3)
+  (muhenkan t) @et_co 100 all-released (L1 L2 L3 4combo)
+  (henkan   t) @et_co 100 all-released (L1 L2 L3 4combo)
+  (d        f) (multi @to-combo4 @at-f) 200 all-released (L1 L2 L3 4combo)  ;; D+Fコンボ: 4comboレイヤー移行 + Alt+Tab (200ms猶予)
+  (d        s) (multi @to-combo4 @at-s) 200 all-released (L1 L2 L3 4combo)  ;; D+Sコンボ: 4comboレイヤー移行 + Shift+Alt+Tab (200ms猶予)
 )
 
 ;; ── Base layer (Layer-0) ──
@@ -177,7 +181,7 @@
   r     @r0
   a     @a0
   s     @s0
-  d     @d0          ;; LalaPad: lt 2 D — tap=d, hold=L2
+  ;; d はコンボ(D+F/D+S)とバッティング回避のため素の d のまま（レイヤー割当なし）
   f     @f0
   z     @z0
   c     @c0
@@ -271,4 +275,11 @@
   c pgup                    ;; LalaPad: kp PAGE_UP (注: 元の System layer は元々 trans)
   v pgdn
   b del
+)
+
+;; ── 4combo layer (D起点Alt+Tabコンボ専用レイヤー) ──
+;; D+F または D+S コンボで一時移行し、Dを押している間Altを維持したままTab連打・戻るが可能
+(deflayermap (4combo)
+  f @at-f                   ;; F: 次のウィンドウ (Alt + Tab)
+  s @at-s                   ;; S: 前のウィンドウ (Shift + Alt + Tab)
 )
